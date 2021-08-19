@@ -13,7 +13,8 @@ export default function saludar() {
 }
 
 export class Saludar {
-  constructor() {
+  constructor(numero, letra) {
     console.log("Hola Clases +ES6");
+    console.log(`Soy un numero: ${numero}, y yo una letra: ${letra}`);
   }
 }

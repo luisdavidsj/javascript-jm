@@ -10,3 +10,6 @@ console.log(calculos.restar(3, 4));
 saludar();
 let saludo = new Saludar();
 saludo;
+//Mandando a llamar una clase que recibe 2 argumentos
+let asd = new Saludar(1, "A");
+asd;
