@@ -11,5 +11,5 @@ saludar();
 let saludo = new Saludar();
 saludo;
 //Mandando a llamar una clase que recibe 2 argumentos
-let asd = new Saludar(1, "A");
-asd;
+let saludo2 = new Saludar(1, "A");
+saludo2;
