@@ -245,128 +245,129 @@
 
     console.log(valorDeFuncion);
 
-    /*  function saludar(nombre = "Desconocido", edad = 0) {
-       console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años.`);
-     } */
+    function saludar(nombre = "Desconocido", edad = 0) {
+      console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años.`);
+    }
 
-    //saludar("kEnAi", 7);
-    //saludar();
+    saludar("kEnAi", 7);
+    saludar();
 
     //Funciones declaradas VS funciones expresadas
 
     //funcionDeclarada();
 
-    /* function funcionDeclarada() {
+    function funcionDeclarada() {
       console.log("Esto es un función declarada, puede invocarse en cualquier parte de nuestro código, incluso antes de que la función sea declarada");
-    } */
+    }
 
-    //funcionDeclarada();
+    funcionDeclarada();
 
     //funcionExpresada();
 
     //función anónima
-    /* const funcionExpresada = function () {
+    const funcionExpresada = function () {
       console.log("Esto es una función expresada, es decir, una función que se le ha asignado como valor a una variable, si invocamos esta función antes de su definición JS nos dirá 'Cannot access 'funcionExpresada' before initialization'")
-    } */
+    }
 
-    //funcionExpresada();
-
-
-
-
-
-    /* **********     Curso JavaScript: 11. Arreglos (Arrays) - #jonmircha     ********** */
-
-    /*     const a = [];
-        const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
-        console.log(a);
-        console.log(b);
-        console.log(b.length);
-        console.log(b[2]);
-        console.log(b[0]);
-        console.log(b[3]);
-        console.log(b[3][2]);
-        console.log(b[3][3][0]);
-
-        const c = Array.of("X", "Y", "Z", 9, 8, 7);
-        console.log(c);
-
-        const d = Array(100).fill(false);
-        console.log(d);
-
-        const e = new Array();
-        console.log(e);
-
-        const f = new Array(1, 2, 3, true, false);
-        console.log(f);
-
-        const colores = ["Rojo", "Verde", "Azul"];
-        console.log(colores);
-
-        colores.push("Negro");
-        console.log(colores);
-
-        colores.pop();
-        console.log(colores);
-
-        colores.forEach(function (el, index) {
-          console.log(`<li id="${index}">${el}</li>`);
-        }); */
+    funcionExpresada();
 
 
 
 
 
-    /* **********     Curso JavaScript: 12. Objetos - #jonmircha     ********** */
+    console.log("➖➖➖➖➖     Curso JavaScript: 11. Arreglos (Arrays) - #jonmircha     ➖➖➖➖➖");
 
-    /* let a = new String("Hola");
-    //console.log(a)
+    const a_arr = [];
+    const b_arr = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
+    console.log(a_arr);
+    console.log(b_arr);
+    console.log(b_arr.length);
+    console.log(b_arr[2]);
+    console.log(b_arr[0]);
+    console.log(b_arr[3]);
+    console.log(b_arr[3][2]);
+    console.log(b_arr[3][3][0]);
 
-    const b = {}
-    console.log(b);
+    const c_arr = Array.of("X", "Y", "Z", 9, 8, 7);
+    console.log(c_arr);
 
-    const c = new Object();
-    console.log(c);
- */
+    const d_arr = Array(100).fill(false);
+    console.log(d_arr);
+
+    const e_arr = new Array();
+    console.log(e_arr);
+
+    const f_arr = new Array(1, 2, 3, true, false);
+    console.log(f_arr);
+
+    const colores_arr = ["Rojo", "Verde", "Azul"];
+    console.log(colores_arr);
+
+    colores.push("Negro");
+    console.log(colores_arr);
+
+    colores.pop();
+    console.log(colores_arr);
+
+    colores.forEach(function (el, index) {
+      console.log(`<li id="${index}">${el}</li>`);
+    });
+
+
+
+
+
+    console.log("➖➖➖➖➖     Curso JavaScript: 12. Objetos - #jonmircha     ➖➖➖➖➖");
+
+    let a_obj = new String("Hola");
+    console.log(a_obj)
+
+    const b_obj = {}
+    console.log(b_obj);
+
+    const c_obj = new Object();
+    console.log(c_obj);
+
     /* dentro de un objeto a las variables se le van a llamar atributos/propiedades y a las funciones se les llama métodos */
-    /*     const jon = {
-          nombre: "Jon",
-          apellido: "MirCha",
-          edad: 35,
-          pasatiempos: ["Correr", "Hacer ejercicio", "Dar clases"],
-          soltero: false,
-          contacto: {
-            email: "jonmircha@gmail.com",
-            twitter: "@jonmircha",
-            movil: "5215512345678"
-          },
-          saludar: function () {
-            console.log(`Hola :)`)
-          },
-          decirMiNombre: function () {
-            console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en twitter.`)
-          }
-        }
+    const jon = {
+      nombre: "Jon",
+      apellido: "MirCha",
+      edad: 35,
+      pasatiempos: ["Correr", "Hacer ejercicio", "Dar clases"],
+      soltero: false,
+      contacto: {
+        email: "jonmircha@gmail.com",
+        twitter: "@jonmircha",
+        movil: "5215512345678"
+      },
+      saludar: function () {
+        console.log(`Hola :)`)
+      },
+      decirMiNombre: function () {
+        console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en twitter.`)
+      }
+    }
 
-        console.log(jon);
-        console.log(jon["nombre"]);
-        console.log(jon["apellido"]);
-        console.log(jon.nombre);
-        console.log(jon.apellido);
-        console.log(jon.edad);
-        console.log(jon.soltero);
-        console.log(jon.pasatiempos);
-        console.log(jon.pasatiempos[1]);
-        console.log(jon.contacto);
-        console.log(jon.contacto.twitter);
-        jon.saludar();
-        jon.decirMiNombre();
+    console.log(jon);
+    console.log(jon["nombre"]);
+    console.log(jon["apellido"]);
+    console.log(jon.nombre);
+    console.log(jon.apellido);
+    console.log(jon.edad);
+    console.log(jon.soltero);
+    console.log(jon.pasatiempos);
+    console.log(jon.pasatiempos[1]);
+    console.log(jon.contacto);
+    console.log(jon.contacto.twitter);
+    console.log(jon.contacto.movil);
+    jon.saludar();
+    jon.decirMiNombre();
 
-        console.log(Object.keys(jon));
-        console.log(Object.values(jon));
-        console.log(jon.hasOwnProperty("nombre"));
-        console.log(jon.hasOwnProperty("nacimiento"));
-     */
+    console.log(Object.keys(jon));
+    console.log(Object.values(jon));
+    console.log(jon.hasOwnProperty("nombre"));
+    console.log(jon.hasOwnProperty("nacimiento"));
+
 
 
 
