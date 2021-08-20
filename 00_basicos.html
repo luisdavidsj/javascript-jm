@@ -329,6 +329,8 @@
     console.log(c_obj);
 
     /* dentro de un objeto a las variables se le van a llamar atributos/propiedades y a las funciones se les llama métodos */
+
+    //Objeto jon
     const jon = {
       nombre: "Jon",
       apellido: "MirCha",
@@ -367,6 +369,43 @@
     console.log(Object.values(jon));
     console.log(jon.hasOwnProperty("nombre"));
     console.log(jon.hasOwnProperty("nacimiento"));
+
+    //objeto luis
+    const LUIS = {
+      nombreLuis: "luis",
+      segundoNombreLuis: "david",
+      apellido1Luis: "saenz",
+      apellido2Luis: "jurado",
+      edadLuis: 27,
+      tecnologiasLuis: ["html", "css", "javascript", "bootstrap", "flexbox", "figma", "react"],
+      pasatiemposLuis: ["aprender", "enseñar", "viajar", ["programar en vanilla javascript", "diseñar en css", "estructurar en html"]],
+      solteroLuis: true,
+      metasLuis: [
+        metasProgramacionLuis = ["Aprender React", "Aprender Javascript", "Aprender CSS", "Aprender Angular", "Aprender Vue"],
+        metasPersonalesLuis = ["Trabajo", "Familia", "Viajar", "Conocer personas", "Hacer Amigos"],
+        lugaresPorViajarLuis = [usa = ["NY", "Las Vegas", "Los Angeles", "Miami", "San Francisco"], mexico = ["Cancun", "Chiapas", "Mty", "CDMX", "Mazatlan"]],
+      ],
+      contactoLuis: {
+        twitterLuis: "@luisdavsaenz",
+        instagramLuis: "luisdavidsj",
+        facebookLuis: "https://facebook.com/luisdavidspider",
+        linkedinLuis: "https://www.linkedin.com/in/luisdavidsj/",
+        githubLuis: "https://github.com/luisdavidsj"
+      },
+      saludoLuis1: function () {
+        console.log(`Hola, me llamo ${this.nombreLuis} ${this.segundoNombreLuis} ${this.apellido1Luis} ${this.apellido2Luis}, estoy aprendiendo ${this.tecnologiasLuis[2]}, tengo ${this.edadLuis} años, me encanta ${this.pasatiemposLuis[2]} y ${this.pasatiemposLuis[3][0]}, ${this.solteroLuis ? "Soy soltero" : "Estoy casado"}, me gustaría viajar a ${this.metasLuis[2][0][0]} y a ${this.metasLuis[2][1][2]}, puedes contactarme en ${this.contactoLuis.linkedinLuis}`)
+      }
+    }
+
+    //Experimento con condiciones, fecha y objetos
+    let fechaInicioLuis = new Date();
+    let anoInicioLuis = fechaInicioLuis.getFullYear();
+    console.log(anoInicioLuis);
+    if (anoInicioLuis >= 2021) {
+      LUIS.saludoLuis1();
+    } else {
+      console.log("Te falta aprender más");
+    }
 
 
 
