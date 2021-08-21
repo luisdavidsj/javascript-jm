@@ -4,11 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fundamentos JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <title>Prácticas JavaScript</title>
 </head>
 
 <body>
-  <h1>Fundamentos JavaScript</h1>
+  <h1 class="bg-dark text-white">Prácticas JavaScript</h1>
+
+  <div class="card" style="width: 18rem;">
+    <img src="./img/luis.jpg" class="card-img-top" alt="luis">
+    <div class="card-body">
+      <h5 class="card-title" id="nombreLuis"></h5>
+      <p id="holaLuis" class="card-text">Some quick example text to build on the card title and make up the bulk of the
+        card's
+        content.
+      </p>
+      <a href="https://www.linkedin.com/in/luisdavidsj/" class="btn btn-primary" target="_blank">Mi Perfil</a>
+    </div>
+  </div>
+
+  <!--Scripts-->
   <script>
     console.log("➖➖➖➖➖     Curso JavaScript: 3. Variables: var 🥊VS🥊 let - #jonmircha     ➖➖➖➖➖");
 
@@ -374,7 +390,7 @@
     const LUIS = {
       nombreLuis: "luis",
       segundoNombreLuis: "david",
-      apellido1Luis: "saenz",
+      apellido1Luis: "sáenz",
       apellido2Luis: "jurado",
       fechaNacimientoLuis: new Date("1993-09-26"),
       tecnologiasLuis: ["html", "css", "javascript", "bootstrap", "flexbox", "figma", "react"],
@@ -400,9 +416,24 @@
         return edadLuis;
       },
       saludoLuis1: function () {
-        console.log(`Hola, me llamo ${this.nombreLuis} ${this.segundoNombreLuis} ${this.apellido1Luis} ${this.apellido2Luis}, estoy aprendiendo ${this.tecnologiasLuis[2]}, tengo ${this.calcularEdad(this.fechaNacimientoLuis)} años, me encanta ${this.pasatiemposLuis[2]} y ${this.pasatiemposLuis[3][0]}, ${this.solteroLuis ? "Soy soltero" : "Estoy casado"}, me gustaría viajar a ${this.metasLuis[2][0][0]} y a ${this.metasLuis[2][1][2]}, puedes contactarme en ${this.contactoLuis.linkedinLuis}`)
+
+        let saludoCompleto = `Hola, me llamo ${this.nombreLuis.charAt(0).toUpperCase() + this.nombreLuis.slice(1)} ${this.segundoNombreLuis.charAt(0).toUpperCase() + this.segundoNombreLuis.slice(1)} ${this.apellido1Luis.charAt(0).toUpperCase() + this.apellido1Luis.slice(1)} ${this.apellido2Luis.charAt(0).toUpperCase() + this.apellido2Luis.slice(1)}, estoy aprendiendo tecnologías frontend y ${this.tecnologiasLuis[2]}, tengo ${this.calcularEdad(this.fechaNacimientoLuis)} años, me encanta ${this.pasatiemposLuis[2]} y ${this.pasatiemposLuis[3][0]}, ${this.solteroLuis ? "Soy soltero" : "Estoy casado"}, me gustaría viajar a ${this.metasLuis[2][0][0]} y a ${this.metasLuis[2][1][2]}, puedes contactarme en ${this.contactoLuis.linkedinLuis}`;
+
+        console.log(saludoCompleto);
+
+        return saludoCompleto;
       }
     }
+
+    let presentacion = LUIS.saludoLuis1();
+    document.getElementById("holaLuis").innerHTML = presentacion;
+    //Nombre completo con formato primer letra mayuscula:
+    let nombreLuisMayus = LUIS.nombreLuis.charAt(0).toUpperCase() + LUIS.nombreLuis.slice(1);
+    let segundoNombreLuisMayus = LUIS.segundoNombreLuis.charAt(0).toUpperCase() + LUIS.segundoNombreLuis.slice(1);
+    let apellido1LuisMayus = LUIS.apellido1Luis.charAt(0).toUpperCase() + LUIS.apellido1Luis.slice(1);
+    let apellido2LuisMayus = LUIS.apellido2Luis.charAt(0).toUpperCase() + LUIS.apellido2Luis.slice(1);
+    let nombreCompletoLuis = `${nombreLuisMayus} ${segundoNombreLuisMayus} ${apellido1LuisMayus} ${apellido2LuisMayus}`;
+    document.getElementById("nombreLuis").innerHTML = nombreCompletoLuis;
 
     //Experimento con condiciones, fecha y objetos
     let fechaInicioLuis = new Date();
@@ -415,7 +446,7 @@
     }
 
     let estadoCivilLuis = LUIS.solteroLuis;
-    estadoCivilLuis ? console.log("Conoce más amigas") : console.log("Felicidades");
+    estadoCivilLuis ? console.log("Conoce gente") : console.log("Felicidades");
 
 
 
@@ -426,9 +457,7 @@
 
     /* Operadores */
     /* Aritméticos:
-
     + - * / % ()
-
     */
 
     let a_operadores = 5 + (5 - 10) * 3;
@@ -439,9 +468,7 @@
 
 
     /*  Relacionales:
-
     >, <,   >=, <=, ==, ===, !=, !==
-
     */
 
     console.log(8 > 9);
@@ -482,11 +509,9 @@
     console.log(i_operadores);
 
     /* Lógicos:
-
     ! - Not : Niega, es decir lo que es verdadero lo vuelve falso y viceversa
     || - Or: Cuando tengo 2 o más condiciones, con que una se cumpla, es decir sea verdadera, el OR será verdadero.
     && - And: Cuando tengo 2 o más condiciones, todas tienen que cumplirse, es decir ser verdaderas, para que AND se valide
-
     */
 
     console.log(!true);
@@ -499,11 +524,11 @@
 
 
 
-    /* **********     Curso JavaScript: 14. Condicionales - #jonmircha     ********** */
+    console.log("➖➖➖➖➖     Curso JavaScript: 14. Condicionales - #jonmircha     ➖➖➖➖➖");
 
     /* if - else */
 
-    /* let edad = 9;
+    let edad = 9;
 
     if (edad > 17) {
       console.log("Eres mayor de Edad");
@@ -527,7 +552,7 @@
       console.log("Eres menor de Edad");
     } else {
       console.log("Eres mayor de Edad");
-    } */
+    }
 
     /* if - else if - else */
     /*
@@ -1273,6 +1298,9 @@
          console.log('versión Facebook')
        }(); */
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
