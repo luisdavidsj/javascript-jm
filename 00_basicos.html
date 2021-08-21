@@ -16,10 +16,7 @@
     <img src="./img/luis.jpg" class="card-img-top" alt="luis">
     <div class="card-body">
       <h5 class="card-title" id="nombreLuis"></h5>
-      <p id="holaLuis" class="card-text">Some quick example text to build on the card title and make up the bulk of the
-        card's
-        content.
-      </p>
+      <p id="holaLuis" class="card-text"></p>
       <a href="https://www.linkedin.com/in/luisdavidsj/" class="btn btn-primary" target="_blank">Mi Perfil</a>
     </div>
   </div>
@@ -417,7 +414,7 @@
       },
       saludoLuis1: function () {
 
-        let saludoCompleto = `Hola, me llamo ${this.nombreLuis.charAt(0).toUpperCase() + this.nombreLuis.slice(1)} ${this.segundoNombreLuis.charAt(0).toUpperCase() + this.segundoNombreLuis.slice(1)} ${this.apellido1Luis.charAt(0).toUpperCase() + this.apellido1Luis.slice(1)} ${this.apellido2Luis.charAt(0).toUpperCase() + this.apellido2Luis.slice(1)}, estoy aprendiendo tecnologías frontend y ${this.tecnologiasLuis[2]}, tengo ${this.calcularEdad(this.fechaNacimientoLuis)} años, me encanta ${this.pasatiemposLuis[2]} y ${this.pasatiemposLuis[3][0]}, ${this.solteroLuis ? "Soy soltero" : "Estoy casado"}, me gustaría viajar a ${this.metasLuis[2][0][0]} y a ${this.metasLuis[2][1][2]}, puedes contactarme en ${this.contactoLuis.linkedinLuis}`;
+        let saludoCompleto = `Hola, me llamo ${this.nombreLuis.charAt(0).toUpperCase() + this.nombreLuis.slice(1)} ${this.segundoNombreLuis.charAt(0).toUpperCase() + this.segundoNombreLuis.slice(1)} ${this.apellido1Luis.charAt(0).toUpperCase() + this.apellido1Luis.slice(1)} ${this.apellido2Luis.charAt(0).toUpperCase() + this.apellido2Luis.slice(1)}, estoy aprendiendo tecnologías frontend y ${this.tecnologiasLuis[2]}, tengo ${this.calcularEdad(this.fechaNacimientoLuis)} años, me encanta ${this.pasatiemposLuis[2]} y ${this.pasatiemposLuis[3][0]}, ${this.solteroLuis ? "soy soltero" : "Estoy casado"}, me gustaría viajar a ${this.metasLuis[2][0][0]} y a ${this.metasLuis[2][1][2]}, puedes contactarme en ${this.contactoLuis.linkedinLuis}`;
 
         console.log(saludoCompleto);
 
@@ -471,12 +468,12 @@
     >, <,   >=, <=, ==, ===, !=, !==
     */
 
-    console.log(8 > 9);
-    console.log(9 > 8);
-    console.log(8 >= 9);
-    console.log(9 >= 8);
-    console.log(7 < 7);
-    console.log(7 <= 7);
+    console.log(8 > 9);//false
+    console.log(9 > 8);//true
+    console.log(8 >= 9);//false
+    console.log(9 >= 8);//true
+    console.log(7 < 7);//false
+    console.log(7 <= 7);//true
 
     /*
     = 1 igual es asignación  de variable
@@ -484,29 +481,36 @@
     === 3 igulaes es comparación de tipo de dato y de valor
     */
 
-    console.log(7 == 7);
-    console.log("7" == 7);
-    console.log(0 == false);
+    console.log(7 == 7);//true
+    console.log("7" == 7);//true
+    console.log(0 == false);//true
 
-    console.log(7 === 7);
-    console.log("7" === 7);
-    console.log(0 === false);
+    console.log(7 === 7);//true
+    console.log("7" === 7);//false
+    console.log(0 === false);//false
 
     /* Incremento Decremento */
     let i_operadores = 2;
-
-    console.log(i_operadores++);
-    console.log(++i_operadores);
+    console.log("Variable i_operadores: " + i_operadores);
+    console.log("*************************************");
+    console.log("Post-incremento:", i_operadores++);//post-incremento
+    console.log(i_operadores);
+    console.log("Pre-incremento:", ++i_operadores);//pre-incremento
+    console.log("*************************************");
+    console.log("Post-decremento", i_operadores--);//post-decremento
+    console.log(i_operadores);
+    console.log("Pre-decremento", --i_operadores);//pre-decremento
+    console.log("*************************************");
 
     i_operadores = i_operadores + 2;
-    i_operadores *= 3;
+    i_operadores *= 3;//Es lo mismo que: i_operadores = i_operadores * 3;
 
     //operador unario
-    i_operadores++;
-    i_operadores--;
-    ++i_operadores;
-    --i_operadores;
-    console.log(i_operadores);
+    i_operadores++;//13
+    i_operadores--;//12
+    ++i_operadores;//13
+    --i_operadores;//12
+    console.log(i_operadores);//12
 
     /* Lógicos:
     ! - Not : Niega, es decir lo que es verdadero lo vuelve falso y viceversa
@@ -514,11 +518,11 @@
     && - And: Cuando tengo 2 o más condiciones, todas tienen que cumplirse, es decir ser verdaderas, para que AND se valide
     */
 
-    console.log(!true);
-    console.log(!false);
-    console.log((9 === 9) || ("9" === 9));
-    console.log((9 === 9) && ("9" === 9));
-    console.log((9 === 9) && ("9" === "9"));
+    console.log(!true);//false
+    console.log(!false);//true
+    console.log((9 === 9) || ("9" === 9));//true
+    console.log((9 === 9) && ("9" === 9));//false
+    console.log((9 === 9) && ("9" === "9"));//true
 
 
 
@@ -561,7 +565,7 @@
       Buenas tardes 12hrs - 18hrs
       Buenas noches 19hrs - 23hrs
     */
-    /* let hora = 23;
+    let hora = 23;
     if (hora >= 0 && hora <= 5) {
       console.log("Déjame dormir");
     } else if (hora >= 6 && hora <= 11) {
@@ -580,14 +584,14 @@
       console.log("Buenas tardes");
     } else {
       console.log("Buenas noches");
-    } */
+    }
 
     /* Operador Ternario (condición) ? verdadero : falsa */
-    /*  console.log("Operador Ternario");
-     let eresMayor = (edad >= 18)
-       ? "Eres mayor de Edad"
-       : "Eres menor de Edad";
-     console.log(eresMayor); */
+    console.log("Operador Ternario");
+    let eresMayor = (edad >= 18)
+      ? "Eres mayor de Edad"
+      : "Eres menor de Edad";
+    console.log(eresMayor);
 
     /* switch - case */
     /*
@@ -599,7 +603,7 @@
     viernes - 5
     sábado - 6
     */
-    /* let dia = 2;
+    let dia = 2;
 
     switch (dia) {
       case 0:
@@ -627,7 +631,7 @@
         console.log("El día no existe");
         break;
     }
- */
+
 
 
 
