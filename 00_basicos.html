@@ -457,7 +457,9 @@
     + - * / % ()
     */
 
+    //Jerarquía de operaciones
     let a_operadores = 5 + (5 - 10) * 3;
+    //Residuo de 5 / 2 = 1
     let modulo_operadores = 5 % 2;
 
     console.log(a_operadores);
@@ -476,7 +478,7 @@
     console.log(7 <= 7);//true
 
     /*
-    = 1 igual es asignación  de variable
+    = 1 igual es asignación de variable
     == 2 iguales es comparacion de valores
     === 3 igulaes es comparación de tipo de dato y de valor
     */
@@ -587,7 +589,7 @@
     }
 
     /* Operador Ternario (condición) ? verdadero : falsa */
-    console.log("Operador Ternario");
+    console.log("Operador Ternario:");
     let eresMayor = (edad >= 18)
       ? "Eres mayor de Edad"
       : "Eres menor de Edad";
@@ -637,20 +639,21 @@
 
 
 
-    /* **********     Curso JavaScript: 15. Ciclos (Loops) - #jonmircha     ********** */
+    console.log("➖➖➖➖➖     Curso JavaScript: 15. Ciclos (Loops) - #jonmircha     ➖➖➖➖➖");
 
-    /*  let contador = 0;
+    let contador = 0;
 
-     while (contador < 10) {
-       console.log("while " + contador);
-       contador++;
-     }
+    //While
+    while (contador < 10) {
+      console.log("while " + contador);
+      contador++;
+    }
 
-
-     do {
-       console.log("do while " + contador);
-       contador++;
-     } while (contador < 10); */
+    //Do while
+    do {
+      console.log("do while " + contador);
+      contador++;
+    } while (contador < 10);
 
     /* for (inicialización de variable; condición; decremento o incremento) {
       sentencias que ejecuta el for
@@ -658,7 +661,8 @@
       sentencias que ejecuta el for
     } */
 
-    /* for (let i = 0; i < 10; i++) {
+    //For
+    for (let i = 0; i < 10; i++) {
       console.log("for " + i);
     }
 
@@ -668,16 +672,20 @@
       console.log(numeros[i]);
     }
 
+
+    //For in: Permite recorrer o iterar las PROPIEDADES de un OBJETO (Es un for especial para un objeto)
     const jon = {
       nombre: "Jon",
       apellido: "MirCha",
-      edad: 35
+      edad: 35,
+      twitter: "@jonmircha"
     }
 
     for (const propiedad in jon) {
       console.log(`Key: ${propiedad}, Value: ${jon[propiedad]}`);
     }
 
+    //for of: Permite recorrer o iterar TODOS Y CADA UNO DE LOS ELEMENTOS de cualquier objeto que sea iterable en JavaScript (Que se pueda partir en pequeños elementos)
     for (const elemento of numeros) {
       console.log(elemento);
     }
@@ -686,36 +694,36 @@
 
     for (const caracter of cadena) {
       console.log(caracter);
-    } */
+    }
 
 
 
 
 
-    /* **********     Curso JavaScript: 16. Manejo de Errores - #jonmircha     ********** */
-    /*  try {
-       console.log("En el Try se agrega el código a evaluar");
-       noExiste;
-       console.log("Segundo mensaje en el try");
-     } catch (error) {
-       console.log("Catch, captura cualquier error surgido o lanzado en el try");
-       console.log(error);
-     } finally {
-       console.log("El bloque finally se ejecutará siempre al final de unbloque try-catch");
-     }
+    /*console.log("➖➖➖➖➖     Curso JavaScript: 16. Manejo de Errores - #jonmircha     ➖➖➖➖➖");
+    try {
+      console.log("En el Try se agrega el código a evaluar");
+      noExiste;
+      console.log("Segundo mensaje en el try");
+    } catch (error) {
+      console.log("Catch, captura cualquier error surgido o lanzado en el try");
+      console.log(error);
+    } finally {
+      console.log("El bloque finally se ejecutará siempre al final de unbloque try-catch");
+    }
 
 
-     try {
-       let numero = "y";
+    try {
+      let numero = "y";
 
-       if (isNaN(numero)) {
-         throw new Error("El caractér introducido no es un Número");
-       }
+      if (isNaN(numero)) {
+        throw new Error("El caractér introducido no es un Número");
+      }
 
-       console.log(numero * numero);
-     } catch (error) {
-       console.log(`Se produjo el siguiente error: ${error}`);
-     } */
+      console.log(numero * numero);
+    } catch (error) {
+      console.log(`Se produjo el siguiente error: ${error}`);
+    }*/
 
 
 
