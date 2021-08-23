@@ -413,7 +413,6 @@
         return edadLuis;
       },
       saludoLuis1: function () {
-
         let saludoCompleto = `Hola, me llamo ${this.nombreLuis.charAt(0).toUpperCase() + this.nombreLuis.slice(1)} ${this.segundoNombreLuis.charAt(0).toUpperCase() + this.segundoNombreLuis.slice(1)} ${this.apellido1Luis.charAt(0).toUpperCase() + this.apellido1Luis.slice(1)} ${this.apellido2Luis.charAt(0).toUpperCase() + this.apellido2Luis.slice(1)}, estoy aprendiendo tecnologías frontend y ${this.tecnologiasLuis[2]}, tengo ${this.calcularEdad(this.fechaNacimientoLuis)} años, me encanta ${this.pasatiemposLuis[2]} y ${this.pasatiemposLuis[3][0]}, ${this.solteroLuis ? "soy soltero" : "Estoy casado"}, me gustaría viajar a ${this.metasLuis[2][0][0]} y a ${this.metasLuis[2][1][2]}, puedes contactarme en ${this.contactoLuis.linkedinLuis}`;
 
         console.log(saludoCompleto);
@@ -638,22 +637,25 @@
 
 
 
-
     console.log("➖➖➖➖➖     Curso JavaScript: 15. Ciclos (Loops) - #jonmircha     ➖➖➖➖➖");
 
-    let contador = 0;
+    //Variable:
+    let contadorW = 0;
 
-    //While
-    while (contador < 10) {
-      console.log("while " + contador);
-      contador++;
+    //While:
+    while (contadorW < 5) {
+      console.log("while " + contadorW);
+      contadorW++;
     }
 
-    //Do while
+    let contadorDW = 0;
+    //Do while:
     do {
-      console.log("do while " + contador);
-      contador++;
-    } while (contador < 10);
+      console.log("do while " + contadorDW);
+      contadorDW++;
+    } while (contadorDW < 5);
+
+    //For:
 
     /* for (inicialización de variable; condición; decremento o incremento) {
       sentencias que ejecuta el for
@@ -661,41 +663,72 @@
       sentencias que ejecuta el for
     } */
 
-    //For
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       console.log("for " + i);
     }
 
-    let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+    let numerosCiclos = [10, 20, 30, 40, 50];
 
-    for (let i = 0; i < numeros.length; i++) {
-      console.log(numeros[i]);
+    for (let i = 0; i < numerosCiclos.length; i++) {
+      console.log(numerosCiclos[i]);
     }
 
 
     //For in: Permite recorrer o iterar las PROPIEDADES de un OBJETO (Es un for especial para un objeto)
-    const jon = {
+    //Ejemplo 1:
+    //1. Se declara el objeto:
+    const jonForIn = {
       nombre: "Jon",
       apellido: "MirCha",
       edad: 35,
       twitter: "@jonmircha"
     }
-
-    for (const propiedad in jon) {
-      console.log(`Key: ${propiedad}, Value: ${jon[propiedad]}`);
+    //2. Se iteran las propiedades del objeto:
+    for (const propiedad in jonForIn) {
+      console.log(`Key: ${propiedad}, Value: ${jonForIn[propiedad]}`);
     }
 
+    console.log("************************************");
+
+    //Ejemplo 2
+    //Objeto con valores creados a partir de otro objeto (LUIS):
+    const luisForIn = {
+      nombre: "Luigi",
+      apellido: "Saenz",
+      edad: LUIS.calcularEdad("1993-09-26"),
+      twitter: LUIS.contactoLuis.twitterLuis,
+      linkedin: LUIS.contactoLuis.linkedinLuis,
+      estadoDeAnimo: ":L"
+    }
+    for (const propiedad in luisForIn) {
+      console.log(`Llave: ${propiedad}, Valor: ${luisForIn[propiedad]}`);
+    }
+
+    console.log("************************************");
     //for of: Permite recorrer o iterar TODOS Y CADA UNO DE LOS ELEMENTOS de cualquier objeto que sea iterable en JavaScript (Que se pueda partir en pequeños elementos)
-    for (const elemento of numeros) {
+    //Anteriormente declaramos la variable numerosCiclos
+    for (const elemento of numerosCiclos) {
+      console.log(elemento);
+    }
+    let letrasCiclos = ["A", "B", "C", "D", "E"];
+    for (const elemento of letrasCiclos) {
       console.log(elemento);
     }
 
+    console.log("************************************");
     let cadena = "Hola Mundo";
-
     for (const caracter of cadena) {
       console.log(caracter);
     }
 
+    let testArray = [
+      1,
+      2,
+      3
+    ]
+    for (const valor of testArray) {
+      console.log(valor);
+    }
 
 
 
