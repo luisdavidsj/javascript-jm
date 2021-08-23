@@ -733,10 +733,10 @@
 
 
 
-    /*console.log("➖➖➖➖➖     Curso JavaScript: 16. Manejo de Errores - #jonmircha     ➖➖➖➖➖");
+    console.log("➖➖➖➖➖     Curso JavaScript: 16. Manejo de Errores - #jonmircha     ➖➖➖➖➖");
     try {
       console.log("En el Try se agrega el código a evaluar");
-      noExiste;
+      noExiste;//Lanzamiento intencional de un error (La variable no existe)
       console.log("Segundo mensaje en el try");
     } catch (error) {
       console.log("Catch, captura cualquier error surgido o lanzado en el try");
@@ -745,26 +745,24 @@
       console.log("El bloque finally se ejecutará siempre al final de unbloque try-catch");
     }
 
-
+    console.log("************************************");
     try {
-      let numero = "y";
-
-      if (isNaN(numero)) {
+      let numero = "y";//Lanzamiento intencional de un error (La variable no es un numero, sino un caracter)
+      if (isNaN(numero)) {//El error personalizado recibe el numero en el parametro de la funcion isNaN, la cual da true y ejecuta el mensaje de error dentro del if:
         throw new Error("El caractér introducido no es un Número");
       }
-
       console.log(numero * numero);
     } catch (error) {
       console.log(`Se produjo el siguiente error: ${error}`);
-    }*/
+    }
 
 
 
 
 
-    /* **********     Curso JavaScript: 17. break & continue - #jonmircha     ********** */
+    console.log("➖➖➖➖➖     Curso JavaScript: 17. break & continue - #jonmircha     ➖➖➖➖➖");
 
-    /* const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
     for (let i = 0; i < numeros.length; i++) {
       if (i === 5) {
@@ -778,7 +776,7 @@
         continue;
       }
       console.log(numeros[i]);
-    } */
+    }
 
 
 
