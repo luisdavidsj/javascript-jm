@@ -633,6 +633,55 @@
         break;
     }
 
+    //Se usa un mes aleatorio entre 1 y 12
+    let mesRandom = Math.floor(Math.random() * 12 + 1);
+    console.log(`Numero de mes: ${mesRandom}`);
+
+    let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    let textoMes = `El número: ${mesRandom} pertenece al mes de ${meses[mesRandom - 1]}`;
+    //Se pone -1 por que en los arreglos se comienza desde el índice 0, entonces, si por ejemplo sale el numero 1 (enero), en el arreglo se tendría que acceder al índice 0, entonces 1 - 1 = 0, que es el índice al que debemos acceder en el arreglo para dicho mes.
+    switch (mesRandom) {
+      case 1:
+        console.log(textoMes);
+        break;
+      case 2:
+        console.log(textoMes);
+        break;
+      case 3:
+        console.log(textoMes);
+        break;
+      case 4:
+        console.log(textoMes);
+        break;
+      case 5:
+        console.log(textoMes);
+        break;
+      case 6:
+        console.log(textoMes);
+        break;
+      case 7:
+        console.log(textoMes);
+        break;
+      case 8:
+        console.log(textoMes);
+        break;
+      case 9:
+        console.log(textoMes);
+        break;
+      case 10:
+        console.log(textoMes);
+        break;
+      case 11:
+        console.log(textoMes);
+        break;
+      case 12:
+        console.log(textoMes);
+        break;
+
+      default:
+        break;
+    }
+
 
 
 
@@ -672,9 +721,17 @@
     for (let i = 0; i < numerosCiclos.length; i++) {
       console.log(numerosCiclos[i]);
     }
+    let textoAutos = "";
+    let listaDeAutos = ["Corolla", "Atos", "Ferrari", "Volvo"];
+    for (let i = 0; i < listaDeAutos.length; i++) {
+      textoAutos += listaDeAutos[i] + ", ";
+    }
+    console.log(listaDeAutos);
+    console.log("Lista de Autos: " + textoAutos);
 
-
+    ///////////////////////////////////
     //For in: Permite recorrer o iterar las PROPIEDADES de un OBJETO (Es un for especial para un objeto)
+    ///////////////////////////////////
     //Ejemplo 1:
     //1. Se declara el objeto:
     const jonForIn = {
@@ -705,7 +762,9 @@
     }
 
     console.log("************************************");
+    /////////////////////////////////////
     //for of: Permite recorrer o iterar TODOS Y CADA UNO DE LOS ELEMENTOS de cualquier objeto que sea iterable en JavaScript (Que se pueda partir en pequeños elementos)
+    /////////////////////////////////////
     //Anteriormente declaramos la variable numerosCiclos
     for (const elemento of numerosCiclos) {
       console.log(elemento);
