@@ -12,14 +12,14 @@
 <body>
   <h1 class="bg-dark text-white">Prácticas JavaScript</h1>
 
-  <div class="card" style="width: 18rem;">
+  <!--<div class="card" style="width: 18rem;">
     <img src="./img/luis.jpg" class="card-img-top" alt="luis">
     <div class="card-body">
       <h5 class="card-title" id="nombreLuis"></h5>
       <p id="holaLuis" class="card-text"></p>
-      <a href="https://www.linkedin.com/in/luisdavidsj/" class="btn btn-primary" target="_blank">Mi Perfil</a>
+      <a href="https://www.linkedin.com/in/luisdavidsj/" class="btn btn-primary" target="_blank">Perfil LinkedIn</a>
     </div>
-  </div>
+  </div>-->
 
   <!--Scripts-->
   <script>
@@ -413,7 +413,7 @@
         return edadLuis;
       },
       saludoLuis1: function () {
-        let saludoCompleto = `Hola, me llamo ${this.nombreLuis.charAt(0).toUpperCase() + this.nombreLuis.slice(1)} ${this.segundoNombreLuis.charAt(0).toUpperCase() + this.segundoNombreLuis.slice(1)} ${this.apellido1Luis.charAt(0).toUpperCase() + this.apellido1Luis.slice(1)} ${this.apellido2Luis.charAt(0).toUpperCase() + this.apellido2Luis.slice(1)}, estoy aprendiendo tecnologías frontend y ${this.tecnologiasLuis[2]}, tengo ${this.calcularEdad(this.fechaNacimientoLuis)} años, me encanta ${this.pasatiemposLuis[2]} y ${this.pasatiemposLuis[3][0]}, ${this.solteroLuis ? "soy soltero" : "Estoy casado"}, me gustaría viajar a ${this.metasLuis[2][0][0]} y a ${this.metasLuis[2][1][2]}, puedes contactarme en ${this.contactoLuis.linkedinLuis}`;
+        let saludoCompleto = `Hola, soy ${this.nombreLuis.charAt(0).toUpperCase() + this.nombreLuis.slice(1)} ${this.segundoNombreLuis.charAt(0).toUpperCase() + this.segundoNombreLuis.slice(1)} ${this.apellido1Luis.charAt(0).toUpperCase() + this.apellido1Luis.slice(1)} ${this.apellido2Luis.charAt(0).toUpperCase() + this.apellido2Luis.slice(1)}, estoy aprendiendo tecnologías frontend y ${this.tecnologiasLuis[2]}, tengo ${this.calcularEdad(this.fechaNacimientoLuis)} años, me encanta ${this.pasatiemposLuis[2]} y ${this.pasatiemposLuis[3][0]}, ${this.solteroLuis ? "soy soltero" : "Estoy casado"}, me gustaría viajar a ${this.metasLuis[2][0][0]} y a ${this.metasLuis[2][1][2]}, puedes contactarme en ${this.contactoLuis.linkedinLuis}`;
 
         console.log(saludoCompleto);
 
@@ -421,15 +421,15 @@
       }
     }
 
-    let presentacion = LUIS.saludoLuis1();
-    document.getElementById("holaLuis").innerHTML = presentacion;
+    /*let presentacion = LUIS.saludoLuis1();
+    document.getElementById("holaLuis").innerHTML = presentacion;*/
     //Nombre completo con formato primer letra mayuscula:
     let nombreLuisMayus = LUIS.nombreLuis.charAt(0).toUpperCase() + LUIS.nombreLuis.slice(1);
     let segundoNombreLuisMayus = LUIS.segundoNombreLuis.charAt(0).toUpperCase() + LUIS.segundoNombreLuis.slice(1);
     let apellido1LuisMayus = LUIS.apellido1Luis.charAt(0).toUpperCase() + LUIS.apellido1Luis.slice(1);
     let apellido2LuisMayus = LUIS.apellido2Luis.charAt(0).toUpperCase() + LUIS.apellido2Luis.slice(1);
     let nombreCompletoLuis = `${nombreLuisMayus} ${segundoNombreLuisMayus} ${apellido1LuisMayus} ${apellido2LuisMayus}`;
-    document.getElementById("nombreLuis").innerHTML = nombreCompletoLuis;
+    //document.getElementById("nombreLuis").innerHTML = nombreCompletoLuis;
 
     //Experimento con condiciones, fecha y objetos
     let fechaInicioLuis = new Date();
@@ -703,9 +703,9 @@
       console.log("do while " + contadorDW);
       contadorDW++;
     } while (contadorDW < 5);
-
+    ///////////////////////////////////////
     //For:
-
+    ///////////////////////////////////////
     /* for (inicialización de variable; condición; decremento o incremento) {
       sentencias que ejecuta el for
       sentencias que ejecuta el for
@@ -721,6 +721,7 @@
     for (let i = 0; i < numerosCiclos.length; i++) {
       console.log(numerosCiclos[i]);
     }
+
     let textoAutos = "";
     let listaDeAutos = ["Corolla", "Atos", "Ferrari", "Volvo"];
     for (let i = 0; i < listaDeAutos.length; i++) {
@@ -732,6 +733,7 @@
     ///////////////////////////////////
     //For in: Permite recorrer o iterar las PROPIEDADES de un OBJETO (Es un for especial para un objeto)
     ///////////////////////////////////
+    console.log("************  For In  ****************");
     //Ejemplo 1:
     //1. Se declara el objeto:
     const jonForIn = {
@@ -743,6 +745,16 @@
     //2. Se iteran las propiedades del objeto:
     for (const propiedad in jonForIn) {
       console.log(`Key: ${propiedad}, Value: ${jonForIn[propiedad]}`);
+    }
+    console.log("************************************");
+    const juanitoForIn = {
+      nombre: "Juanito",
+      apellido: "Perez",
+      edad: 101,
+      pasatiempos: ["comer", "viajar", "aprender"]
+    }
+    for (const llave in juanitoForIn) {
+      console.log(`Llave: ${llave}, Valor: ${juanitoForIn[llave]}`);
     }
 
     console.log("************************************");
@@ -761,17 +773,18 @@
       console.log(`Llave: ${propiedad}, Valor: ${luisForIn[propiedad]}`);
     }
 
-    console.log("************************************");
     /////////////////////////////////////
     //for of: Permite recorrer o iterar TODOS Y CADA UNO DE LOS ELEMENTOS de cualquier objeto que sea iterable en JavaScript (Que se pueda partir en pequeños elementos)
     /////////////////////////////////////
+    console.log("************  For Of  ****************");
     //Anteriormente declaramos la variable numerosCiclos
     for (const elemento of numerosCiclos) {
       console.log(elemento);
     }
+    console.log("************************************");
     let letrasCiclos = ["A", "B", "C", "D", "E"];
-    for (const elemento of letrasCiclos) {
-      console.log(elemento);
+    for (const element of letrasCiclos) {
+      console.log(element);
     }
 
     console.log("************************************");
@@ -780,11 +793,8 @@
       console.log(caracter);
     }
 
-    let testArray = [
-      1,
-      2,
-      3
-    ]
+    console.log("************************************");
+    let testArray = [1, 2, 3];
     for (const valor of testArray) {
       console.log(valor);
     }
@@ -800,19 +810,22 @@
     } catch (error) {
       console.log("Catch, captura cualquier error surgido o lanzado en el try");
       console.log(error);
+      //Propiedades del objeto Error:
+      console.log(error.name);
+      console.log(error.message);
     } finally {
       console.log("El bloque finally se ejecutará siempre al final de unbloque try-catch");
     }
 
-    console.log("************************************");
+    console.log("************** Errores personalizados ***************");
     try {
       let numero = "y";//Lanzamiento intencional de un error (La variable no es un numero, sino un caracter)
       if (isNaN(numero)) {//El error personalizado recibe el numero en el parametro de la funcion isNaN, la cual da true y ejecuta el mensaje de error dentro del if:
-        throw new Error("El caractér introducido no es un Número");
+        throw new Error("El caractér introducido no es un Número (Este es un error personalizado)");
       }
       console.log(numero * numero);
     } catch (error) {
-      console.log(`Se produjo el siguiente error: ${error}`);
+      console.log(`Se produjo el siguiente error: "${error}"`);
     }
 
 
@@ -830,19 +843,29 @@
       console.log(numeros[i]);
     }
 
-    for (let i = 0; i < numeros.length; i++) {
+    console.log("************************************");
+    const numeros2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (let i = 0; i < numeros2.length; i++) {
       if (i === 5) {
         continue;
       }
-      console.log(numeros[i]);
+      console.log(numeros2[i]);
+    }
+    console.log("************************************");
+    const numeros3 = ["enero", "febrero", "marzo", "abril"];
+    for (let i = 0; i < numeros3.length; i++) {
+      if (i === 2) {
+        continue;
+      }
+      console.log(numeros3[i]);
     }
 
 
 
 
 
-    /* **********     Curso JavaScript: 18. Destructuración - #jonmircha     ********** */
-    /* const numeros = [1, 2, 3];
+    console.log("➖➖➖➖➖     Curso JavaScript: 18. Destructuración - #jonmircha     ➖➖➖➖➖");
+    const numeros = [1, 2, 3];
 
     //Sin destructuración
     let uno = numeros[0],
@@ -862,7 +885,7 @@
     };
 
     let { nombre, edad, apellido } = persona;
-    console.log(nombre, apellido, edad); */
+    console.log(nombre, apellido, edad);
 
 
 
