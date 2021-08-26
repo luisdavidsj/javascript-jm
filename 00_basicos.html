@@ -865,39 +865,50 @@
 
 
     console.log("➖➖➖➖➖     Curso JavaScript: 18. Destructuración - #jonmircha     ➖➖➖➖➖");
-    const numeros = [1, 2, 3];
-
+    //Con la destructuracion es posible obtener variables independientes de cada uno de los valores de un arreglo o de un objeto
     //Sin destructuración
-    let uno = numeros[0],
-      dos = numeros[1],
-      tres = numeros[2];
-
+    console.log("************** Sin Destructuración ***************");
+    const numerosDestr = [1, 2, 3];
+    let uno = numerosDestr[0],
+      dos = numerosDestr[1],
+      tres = numerosDestr[2];
     console.log(uno, dos, tres);
 
     //Con destructuración
-    const [one, two, three] = numeros;
+    console.log("************** Con Destructuración ***************");
+    //Destructuracion En un arreglo
+    console.log("Destructuracion en un arreglo []:");
+    const [one, two, three] = numerosDestr;
     console.log(one, two, three);
+    console.log("Variable one: " + one);
+    console.log("Variable two: " + two);
+    console.log("Variable three: " + three);
 
+    console.log("*****************************");
+    //Destructuracion en un objeto
+    console.log("Destructuracion en un objeto {}:");
     const persona = {
-      nombre: "Jon",
-      apellido: "MirCha",
-      edad: 35
+      nombreDestr: "Jon",
+      apellidoDestr: "MirCha",
+      edadDestr: 35
     };
+    let { nombreDestr, edadDestr, apellidoDestr } = persona;
+    console.log(nombreDestr, apellidoDestr, edadDestr);
+    console.log("Variable nombreDestr: " + nombreDestr);
+    console.log("Variable apellidoDestr: " + apellidoDestr);
+    console.log("Variable edadDestr: " + edadDestr);
 
-    let { nombre, edad, apellido } = persona;
-    console.log(nombre, apellido, edad);
 
 
 
 
-
-    /* **********     Curso JavaScript: 19. Objetos literales - #jonmircha     ********** */
-    /* let nombre = "kEnAi",
-      edad = 7;
+    console.log("➖➖➖➖➖     Curso JavaScript: 19. Objetos literales - #jonmircha     ➖➖➖➖➖");
+    let nombreLiterales = "kEnAi",
+      edadLiterales = 7;
 
     const perro = {
-      nombre: nombre,
-      edad: edad,
+      nombre: nombreLiterales,
+      edad: edadLiterales,
       ladrar: function () {
         console.log("guauu guauu!!!")
       }
@@ -916,7 +927,7 @@
     }
 
     console.log(dog);
-    dog.ladrar(); */
+    dog.ladrar();
 
 
 
