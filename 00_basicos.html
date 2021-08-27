@@ -907,21 +907,21 @@
       edadLiterales = 7;
 
     const perro = {
-      nombre: nombreLiterales,
-      edad: edadLiterales,
+      nombreDelPerro: nombreLiterales,
+      edadDelPerro: edadLiterales,
       ladrar: function () {
         console.log("guauu guauu!!!")
       }
     }
 
     console.log(perro);
-    perro.ladrar()
+    perro.ladrar();
 
     const dog = {
-      nombre,
-      edad,
-      raza: "Callejero",
-      ladrar() {
+      nombreLiterales,//Esta variable está ligada a la variable nombreLiterales declarada al principio de este tema
+      edadLiterales,//Esta variable está ligada a la variable edadLiterales declarada al principio de este tema
+      raza: "Callejero",//Podemos seguir declarando nuevas propiedades sin ningún problema
+      ladrar() {//Incluso nuevos métodos
         console.log("guauu guauu guauu!!!")
       }
     }
