@@ -903,8 +903,10 @@
 
 
     console.log("➖➖➖➖➖     Curso JavaScript: 19. Objetos literales - #jonmircha     ➖➖➖➖➖");
-    let nombreLiterales = "kEnAi",
-      edadLiterales = 7;
+
+    //Sin objetos literaless
+    let nombreLiterales = "kEnAi";
+    let edadLiterales = 7;
 
     const perro = {
       nombreDelPerro: nombreLiterales,
@@ -917,11 +919,12 @@
     console.log(perro);
     perro.ladrar();
 
+    //Con objetos literales
     const dog = {
       nombreLiterales,//Esta variable está ligada a la variable nombreLiterales declarada al principio de este tema
       edadLiterales,//Esta variable está ligada a la variable edadLiterales declarada al principio de este tema
       raza: "Callejero",//Podemos seguir declarando nuevas propiedades sin ningún problema
-      ladrar() {//Incluso nuevos métodos
+      ladrar() {//Incluso nuevos métodos y de manera mas facil
         console.log("guauu guauu guauu!!!")
       }
     }
@@ -933,86 +936,125 @@
 
 
 
-    /* **********     Curso JavaScript: 20. Parámetros REST & Operador Spread - #jonmircha     ********** */
-    /* function sumar(a, b, ...c) {
+    console.log("➖➖➖➖➖➖     Curso JavaScript: 20. Parámetros REST & Operador Spread - #jonmircha     ➖➖➖➖➖➖");
+    //Parametros REST
+    function sumarREST(a, b, ...c) {
       let resultado = a + b;
-
       c.forEach(function (n) {
         resultado += n
       });
-
       return resultado;
     }
+    console.log(sumarREST(1, 2, ' "No tira error por que el parametro REST es opcional"'));
+    console.log(sumarREST(1, 2, 3));
+    console.log(sumarREST(1, 2, 3, 4));
+    console.log(sumarREST(1, 2, 3, 4, 5));
+    console.log(sumarREST(1, 2, 3, 4, 5, 6));
+    console.log(sumarREST(1, 2, 3, 4, 5, 6, 7));
+    console.log("*****************************");
 
-    console.log(sumar(1, 2));
-    console.log(sumar(1, 2, 3));
-    console.log(sumar(1, 2, 3, 4));
-    console.log(sumar(1, 2, 3, 4, 5));
-    console.log(sumar(1, 2, 3, 4, 5, 6));
-    console.log(sumar(1, 2, 3, 4, 5, 6, 7));
+    function listaDeItemsREST(item1, item2, ...item3) {
+      let listadoItems = item1 + " " + item2;
+
+      item3.forEach(function (n) {
+        listadoItems += " " + n;
+      });
+      return listadoItems;
+    }
+    console.log(listaDeItemsREST("A", "B"));
+    console.log(listaDeItemsREST("A", "B", "C"));
+    console.log(listaDeItemsREST("A", "B", "C", "D"));
+    console.log(listaDeItemsREST("A", "B", "C", "D", "E"));
+    console.log(listaDeItemsREST("A", "B", "C", "D", "E", "F"));
+    console.log("*****************************");
 
 
+    //Operador de propagación o SPREAD operator
+    //La sintaxis de los parámetros rest nos permiten representar un número indefinido de argumentos como un array.
+    const arr1 = [1, 2, 3, 4, 5];
+    const arr2 = [6, 7, 8, 9, 0];
 
-    const arr1 = [1, 2, 3, 4, 5],
-      arr2 = [6, 7, 8, 9, 0];
-
+    //Sin SPREAD operator:
     console.log(arr1, arr2);
 
-    const arr3 = [...arr1, ...arr2];
-    console.log(arr3); */
+    //Metiendo los arreglos dentro de un arreglo:
+    const arr3 = [arr1, arr2];
+    console.log(arr3);
+
+    //Con SPREAD operator:
+    const arr4 = [...arr1, ...arr2];
+    console.log(arr4);
+    //Otra prueba Con SPREAD operator:
+    const arr5 = [...arr1, ...arr2, ...arr2, ...arr1];
+    console.log(arr5);
 
 
 
 
 
-    /* **********     Curso JavaScript: 21. Arrow Functions - #jonmircha     ********** */
-    /* const saludar = () => console.log(`Hola`);
-    saludar(); */
+    console.log("➖➖➖➖➖     Curso JavaScript: 21. Arrow Functions - #jonmircha     ➖➖➖➖➖");
+    //Arrow function expresada
+    const saludarArrFunc = () => console.log(`Hola`);
+    saludarArrFunc();
 
-    /* const saludar = nombre => console.log(`Hola ${nombre}`);
-    saludar("Irma");
- */
-    /* const sumar = function (a, b) {
+    //Arrow function expresada que recibe un parámetro
+    //(Cuando recibe 1 parametro se pueden omitir los parentesis y cuando la funcion tiene una sola linea de instruccion se pueden omitir las llaves{}):
+    const saludarArrFunc2 = nombre => console.log(`Hola ${nombre}`);
+    saludarArrFunc2("Irma");
+
+    //Arrow function con return
+    const sumarArrowFunc = function (a, b) {
       return a + b;
-    } */
+    }
+    console.log(sumarArrowFunc(8, 8));
 
-    /*  const sumar = (a, b) => a + b;
+    //Arrow function con return implicito (a + b)
+    const sumarArrowFunc2 = (a, b) => a + b;
+    console.log(sumarArrowFunc2(9, 9));
 
-     console.log(sumar(9, 9));
+    //Arrow function con llaves por que hay mas de una linea de instruccion, ya que aqui ya no hay un return implicito
+    const funcionDeVariasLineas = () => {
+      console.log("Uno");
+      console.log("Dos");
+      console.log("Tres");
+    }
+    funcionDeVariasLineas();
 
-     const funcionDeVariasLineas = () => {
-       console.log("Uno");
-       console.log("Dos");
-       console.log("Tres");
-     }
+    //Arrow function dentro de un metodo que recibe como parametro una funcion
+    //De esta manera podemos simplificar la escritura de funciones
+    const numerosArrowFunc = [1, 2, 3, 4, 5];
+    numerosArrowFunc.forEach((el, index) => console.log(`${el} esta en la posición ${index}`));
 
-     funcionDeVariasLineas();
+    //Funcion declarada que llama al objeto this y captura al objeto "Window"
+    function PerroArrFunc() {
+      console.log(this);
+    }
+    PerroArrFunc();
 
-     const numeros = [1, 2, 3, 4, 5];
-
-     numeros.forEach((el, index) => console.log(`${el} esta en la posición ${index}`));
-
-  */
-    /*   function Perro() {
-        console.log(this);
+    //Las Arrow function tienen la capacidad de capturar objeto this del contexto en el que se encuentren, aqui el contexto this es el objeto Window
+    const perroArrFunc2 = {
+      nombre: "kenai",
+      //Hay que tener cuidado cuando se declara un arrow function en un objeto literal, ya que en este caso, se sale del contexto del objeto y arroja el objeto Window
+      ladrar: () => {
+        console.log(this)
       }
+    }
+    perroArrFunc2.ladrar();
 
-      Perro(); */
-
-    /*     const perro = {
-          nombre: "kenai",
-          ladrar() {
-            console.log(this)
-          }
-        }
-
-        perro.ladrar(); */
-
-
+    const perroArrFunc3 = {
+      nombre: "kenai",
+      //Esta funcion forma parte del metodo ladrar del objeto perroArrFunc3, por eso el contexto this... es el objeto
+      ladrar: function () {
+        console.log(this)
+      }
+    }
+    perroArrFunc3.ladrar();
 
 
 
-    /* **********     Curso JavaScript: 22. Prototipos - #jonmircha y Curso JavaScript: 23. Herencia - #jonmircha     ********** */
+
+
+    console.log("➖➖➖➖➖     Curso JavaScript: 22. Prototipos - #jonmircha y Curso JavaScript: 23. Herencia - #jonmircha     ➖➖➖➖➖");
     // POO
     /*
     Clases - Modelo a seguir.
