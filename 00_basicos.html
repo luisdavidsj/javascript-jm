@@ -1128,6 +1128,9 @@
     }
 
     //3. Función constructora donde, fuera de la función prototípica, asignamos los métodos al Prototipo, no a la función como tal
+    /////////////////////////////////
+    ////Función prototípica PADRE
+    /////////////////////////////////
     function Animal(nombre, genero) {
       //Atributos
       this.nombre = nombre;
@@ -1140,13 +1143,20 @@
     Animal.prototype.saludar = function () {
       console.log(`Hola me llamo ${this.nombre}`);
     }
+    //Animal hereda del prototipo nativo de JavaScript "Object"
 
-
-    //Herencia Prototípica
+    /////////////////////////////////
+    ////Herencia Prototípica
+    /////////////////////////////////
     function Perro(nombre, genero, tamanio) {
       this.super = Animal;
       this.super(nombre, genero);
       this.tamanio = tamanio;
+    }
+    function Gato(nombre, genero, dieta) {
+      this.super = Animal;
+      this.super(nombre, genero);
+      this.dieta = dieta;
     }
 
     //Perro está heredando de Animal
@@ -1157,14 +1167,31 @@
     Perro.prototype.sonar = function () {
       console.log("Soy un perro y mi sonido es un ladrido");
     }
-
+    //Método exclusivo del prototipo Perro
     Perro.prototype.ladrar = function () {
       console.log("Guauuu Guauuu !!!!");
     }
+    //Perro hereda del prototipo Animal, que a su vez hereda del prototipo nativo de JavaScript "Object"
 
-    const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
-      lolaBunny = new Animal("Lola Bunny", "Hembra"),
-      miAuto = new Auto("Corolla", "Blanco");
+    //Gato está heredando de Animal
+    Gato.prototype = new Animal();
+    Gato.prototype.constructor = Gato;
+
+    //Sobreescritura de metodos del prototipo padre en el hijo para el prototipo Gato
+    Gato.prototype.sonar = function () {
+      console.log("Soy un gato y mi sonido es un maullido");
+    }
+    Gato.prototype.maullar = function () {
+      console.log("Miauuu Miauuu !!!!");
+    }
+    //Gato hereda del prototipo Animal, y es hermano de la función prototípica "Perro", que a su vez hereda del prototipo nativo de JavaScript "Object"
+
+    //Se crean las instancias de los prototipos
+    //Se cambia el tipo de instancia de Snoopy de Animal a Perro y agregamos el tamaño como parámetro:
+    const snoopy = new Perro("Snoopy", "Macho", "Mediano");
+    const lolaBunny = new Animal("Lola Bunny", "Hembra");
+    const miAuto = new Auto("Corolla", "Blanco");
+    const silvestre = new Gato("Silvestre", "Macho", "Canarios");
 
     console.log(snoopy);
     console.log(lolaBunny);
@@ -1179,6 +1206,9 @@
     miAuto.rundar();
     miAuto.explotar();
 
+    silvestre.sonar();
+    silvestre.maullar();
+    silvestre.saludar();
 
 
 
