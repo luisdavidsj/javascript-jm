@@ -1065,6 +1065,7 @@
 
 
     //1. Creando objetos literales (Duplicando propiedades y métodos, lo cual se considera una mala práctica si vamos a crear muchas instancias del mismo tipo)
+    //Pruebas iniciales//
     const animal = {
       nombre: "Snoopy",
       sonar() {
@@ -1080,6 +1081,23 @@
     }
     console.log(animal2);
 
+    //1. Practicando la creacion de objetos literales
+    const bicho = {
+      nombre: "Arana",
+      ataque() {
+        console.log("Arana atacando...");
+      }
+    }
+    console.log(bicho);
+    const bicho2 = {
+      nombre: "Alacran",
+      ataque() {
+        console.log("Alacran picando");
+      }
+    }
+    console.log(bicho2);
+    //Fin de pruebas iniciales//
+
 
     //2. Función constructora con métodos dentro
     function Animal(nombre, genero) {
@@ -1092,6 +1110,20 @@
       }
       this.saludar = function () {
         console.log(`Hola me llamo ${this.nombre}`);
+      }
+    }
+
+    //2. Practicando la creacion de funciones constructoras con metodos dentro
+    function Auto(marca, color) {
+      //Atributos
+      this.marca = marca;
+      this.color = color;
+      //Metodos dentro de la funcion prototipica
+      this.rundar = function () {
+        console.log("El auto esta andando...");
+      }
+      this.explotar = function () {
+        console.log("El auto exploto...");
       }
     }
 
@@ -1131,7 +1163,8 @@
     }
 
     const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
-      lolaBunny = new Animal("Lola Bunny", "Hembra");
+      lolaBunny = new Animal("Lola Bunny", "Hembra"),
+      miAuto = new Auto("Corolla", "Blanco");
 
     console.log(snoopy);
     console.log(lolaBunny);
@@ -1142,6 +1175,9 @@
 
     lolaBunny.sonar();
     lolaBunny.saludar();
+
+    miAuto.rundar();
+    miAuto.explotar();
 
 
 
