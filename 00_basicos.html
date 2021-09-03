@@ -1286,6 +1286,99 @@
     scooby.setRaza = "Grán Danés";
     console.log(scooby.getRaza);
 
+    console.log("*****************************");
+
+    class VideoJuego {
+      constructor(nombre, plataforma, genero, precio, enVenta) {
+        this.nombre = nombre;
+        this.plataforma = plataforma;
+        this.genero = genero;
+        this.precio = precio;
+        this.enVenta = enVenta;
+      }
+
+      pedir() {
+        console.log(`Solicitud de ${this.nombre} completada`);
+      }
+
+      guardar() {
+        console.log("Juego inventariado");
+      }
+
+      vender() {
+        console.log("Venta concretada")
+      }
+    }
+
+    class Zelda extends VideoJuego {
+      constructor(nombre, plataforma, genero, precio, enVenta, codigo, director) {
+        super(nombre, plataforma, genero, precio, enVenta);
+        this.codigo = codigo;
+        this.director = director;
+        this.calificacion = null;
+        this.peso = "20 GB";
+        this.clasificacion = "Everyone 10+";
+      }
+
+      pedir() {
+        console.log(`El juego ${this.nombre} ha sido pedido al proveedor`);
+      }
+
+      guardar() {
+        console.log(`${this.nombre} ha sido inventariado`);
+      }
+
+      static completado() {
+        console.log(`El juego ha sido completado`);
+      }
+
+      get getCodigo() {
+        return this.codigo;
+      }
+      set setCodigo(codigo) {
+        this.codigo = codigo;
+      }
+      get getDirector() {
+        return this.director;
+      }
+      set setDirector(director) {
+        this.director = director;
+      }
+    }
+
+
+    //Pruebas de clase VideoJuego
+    const Pacman = new VideoJuego("Pac-Man", "Retro", "Arcade", 20, false);
+
+    console.log(Pacman);
+    console.log(`El nombre del juego es: ${Pacman.nombre}`);
+    console.log(`La plataforma de ${Pacman.nombre} es: ${Pacman.plataforma}`);
+    console.log(`Su genero es ${Pacman.genero}`);
+    console.log(`El juego ${Pacman.enVenta ? "Si" : "No"} se encuentra a la venta`);
+    Pacman.pedir();
+    Pacman.guardar();
+
+    console.log("*****************************");
+
+    const ZeldaBOTW = new Zelda("Zelda Breath of the wild", ["Nintendo Switch", "WiiU"], "Aventuras", 1500, true, "04549659042", "Hidemaro Fujibayashi");
+
+    console.log(ZeldaBOTW);
+    console.log(`El nombre del juego es: ${ZeldaBOTW.nombre}`);
+    console.log(`La plataforma de ${ZeldaBOTW.nombre} es: ${ZeldaBOTW.plataforma}`);
+    console.log(`Su genero es ${ZeldaBOTW.genero}`);
+    console.log(`El juego ${ZeldaBOTW.enVenta ? "Si" : "No"} se encuentra a la venta`);
+    ZeldaBOTW.pedir();
+    ZeldaBOTW.guardar();
+
+    console.log(ZeldaBOTW.getCodigo);
+    ZeldaBOTW.setCodigo = 1234;
+    console.log(ZeldaBOTW.codigo);
+
+    console.log(ZeldaBOTW.getDirector);
+    ZeldaBOTW.setDirector = nombreCompletoLuis;
+    console.log(ZeldaBOTW.director);
+
+    Zelda.completado();
 
 
 
