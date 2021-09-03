@@ -1063,8 +1063,11 @@
       Métodos - son las acciones que un objeto puede realizar (son funciones dentro de un objeto)
      */
 
+    //Cabe aclarar que a partir de la siguiente lección se utilizarán clases en lugar de funciones prototípicas, el verdadero propósito de esta lección es ver lo que hace JavaScript tras bambalinas cuando creamos clases con JavaScript, en realidad se están creando funciones prototípicas como las de esta lección.
 
-    //1. Creando objetos literales (Duplicando propiedades y métodos, lo cual se considera una mala práctica si vamos a crear muchas instancias del mismo tipo)
+
+    //1. Creando objetos literales
+    //(Duplicando propiedades y métodos, lo cual se considera una mala práctica si vamos a crear muchas instancias del mismo tipo)
     //Pruebas iniciales//
     const animal = {
       nombre: "Snoopy",
@@ -1073,6 +1076,7 @@
       }
     }
     console.log(animal);
+
     const animal2 = {
       nombre: "Lola Bunny",
       sonar() {
@@ -1081,7 +1085,7 @@
     }
     console.log(animal2);
 
-    //1. Practicando la creacion de objetos literales
+    //1.1 Practicando la creacion de objetos literales
     const bicho = {
       nombre: "Arana",
       ataque() {
@@ -1089,6 +1093,7 @@
       }
     }
     console.log(bicho);
+
     const bicho2 = {
       nombre: "Alacran",
       ataque() {
@@ -1096,6 +1101,9 @@
       }
     }
     console.log(bicho2);
+    //Llamando metodos dentro de los objetos:
+    bicho.ataque();
+    bicho2.ataque();
     //Fin de pruebas iniciales//
 
 
@@ -1113,7 +1121,7 @@
       }
     }
 
-    //2. Practicando la creacion de funciones constructoras con metodos dentro
+    //2.1 Practicando la creacion de funciones constructoras con metodos dentro
     function Auto(marca, color) {
       //Atributos
       this.marca = marca;
@@ -1129,7 +1137,7 @@
 
     //3. Función constructora donde, fuera de la función prototípica, asignamos los métodos al Prototipo, no a la función como tal
     /////////////////////////////////
-    ////Función prototípica PADRE
+    ////Función prototípica PADRE////
     /////////////////////////////////
     function Animal(nombre, genero) {
       //Atributos
@@ -1146,7 +1154,7 @@
     //Animal hereda del prototipo nativo de JavaScript "Object"
 
     /////////////////////////////////
-    ////Herencia Prototípica
+    //////Herencia Prototípica///////
     /////////////////////////////////
     function Perro(nombre, genero, tamanio) {
       this.super = Animal;
@@ -1213,8 +1221,8 @@
 
 
 
-    /* **********     Curso JavaScript: 24. Clases - #jonmircha y Curso JavaScript: 25. Métodos estáticos, getters y setters - #jonmircha     ********** */
-    /* class Animal {
+    console.log("➖➖➖➖➖     Curso JavaScript: 24. Clases - #jonmircha y Curso JavaScript: 25. Métodos estáticos, getters y setters - #jonmircha     ➖➖➖➖➖");
+    class Animal2 {
       //el constructor es un método especial que se ejecuta en el momento de instanciar la clase
       constructor(nombre, genero) {
         this.nombre = nombre;
@@ -1231,7 +1239,7 @@
       }
     }
 
-    class Perro extends Animal {
+    class Perro2 extends Animal2 {
       constructor(nombre, genero, tamanio) {
         //con el método super() se manda a llamar el constructor de la clase padre
         super(nombre, genero);
@@ -1262,10 +1270,10 @@
       }
     }
 
-    Perro.queEres();
+    Perro2.queEres();
 
-    const mimi = new Animal("Mimi", "Hembra"),
-      scooby = new Perro("Scooby", "Macho", "Gigante");
+    const mimi = new Animal2("Mimi", "Hembra"),
+      scooby = new Perro2("Scooby", "Macho", "Gigante");
 
     console.log(mimi);
     mimi.saludar();
@@ -1276,7 +1284,7 @@
     scooby.ladrar();
     console.log(scooby.getRaza);
     scooby.setRaza = "Grán Danés";
-    console.log(scooby.getRaza); */
+    console.log(scooby.getRaza);
 
 
 
