@@ -1380,6 +1380,116 @@
 
     Zelda.completado();
 
+    console.log("*****************************");
+
+    class Producto {
+      constructor(nombreProducto, precio, paraLlevar, disponibilidad, sucursal) {
+        this.nombreProducto = nombreProducto;
+        this.precio = precio;
+        this.paraLlevar = paraLlevar;
+        this.disponibilidad = disponibilidad;
+        this.sucursal = sucursal;
+      }
+      realizarVenta() {
+        //Insertar métodos para realizar la venta
+        console.log("Venta realizada");
+      }
+      ventaRechazada() {
+        console.log("Lo sentimos, la venta no pudo concretarse");
+      }
+      static limpiarMesa() {
+        console.log("Mesa limpiada");
+      }
+    }
+
+    class Comida extends Producto {
+      constructor(nombreProducto, precio, paraLlevar, disponibilidad, sucursal, tamanio, idComida) {
+        super(nombreProducto, precio, paraLlevar, disponibilidad, sucursal);
+        this.tamanio = tamanio;
+        this.idComida = idComida;
+        this.marca = "La Chula";
+      }
+      prepararComida() {
+        console.log("La comida ha sido preparada");
+      }
+      servirComida() {
+        console.log("La comida ha sido servida");
+      }
+    }
+
+    class Bebida extends Producto {
+      constructor(nombreProducto, precio, paraLlevar, disponibilidad, sucursal, cantidadEnMl, sabor) {
+        const marca = "Coca Cola";
+        super(nombreProducto, precio, paraLlevar, disponibilidad, sucursal);
+        this.cantidadEnMl = cantidadEnMl
+        this.paraLlevar = paraLlevar;
+        this.disponibilidad = disponibilidad;
+        this.sabor = sabor;
+        this.marca = marca;
+      }
+      llenarVaso() {
+        console.log("Vaso lleno");
+      }
+      tirarVaso() {
+        console.log("El vaso esta en la basura");
+      }
+      reciclarVaso() {
+        console.log("El vaso ha sido reciclado");
+      }
+      static mensajeVaso() {
+        console.log("Puedes hacer refill 1 vez");
+      }
+      mostrarMarca() {
+        console.log(`La marca actual es ${this.marca}`);
+      }
+    }
+
+    class Dulce {
+      constructor(nombre, precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+      }
+      venderDulce() {
+        console.log("Dulce Vendido");
+      }
+      get getPrecioDulce() {
+        return this.precio;
+      }
+      set setPrecioDulce(precio) {
+        this.precio = precio;
+      }
+    }
+
+    const duvalin = new Dulce("Duvalin", 3);
+    duvalin.setPrecioDulce = 2;
+    console.log(duvalin);
+    duvalin.venderDulce();
+    console.log("El precio del dulce es de $" + duvalin.getPrecioDulce);
+
+    console.log("*****************************");
+
+    //Pruebas de clase Comida:
+    const burrito = new Comida("Nacho", 50, false, true, "Las Fuentes", "Normal", "NA01");
+    console.log(`Los burros llamados ${burrito.nombreProducto} cuestan $${burrito.precio} pesos, ${burrito.paraLlevar ? "Es para llevar" : "No es para llevar"}, ${burrito.disponibilidad ? "Se encuentra disponible" : "No se encuentra disponible"}, la sucursal es ${burrito.sucursal}, de tamanio ${burrito.tamanio} y su codigo de venta es ${burrito.idComida}`);
+    burrito.prepararComida();
+    burrito.servirComida();
+    burrito.realizarVenta();
+    burrito.ventaRechazada();
+    Producto.limpiarMesa();
+
+    console.log("*****************************");
+
+    //Pruebas de clase bebida:
+    const mirinda = new Bebida("Mirinda", 16, true, true, "DGO", 600, "Naranja");
+    console.log(`La bebida ${mirinda.nombreProducto} cuesta ${mirinda.precio} pesos, ${mirinda.paraLlevar ? "Es para llevar" : "No es para llevar"}, ${mirinda.disponibilidad ? "Se encuentra disponible" : "No se encuentra disponible"}, la sucursal es ${mirinda.sucursal}, la cantidad en ml son ${mirinda.cantidadEnMl} ml y el sabor es ${mirinda.sabor}`);
+    mirinda.llenarVaso();
+    mirinda.tirarVaso();
+    mirinda.reciclarVaso();
+    Bebida.mensajeVaso();
+    mirinda.mostrarMarca();
+    mirinda.realizarVenta();
+    mirinda.ventaRechazada();
+    Producto.limpiarMesa();
 
 
 
