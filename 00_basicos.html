@@ -22,6 +22,7 @@
   </div>-->
 
   <!--Scripts-->
+  <script src="js/moment.js"></script>
   <script>
     console.log("➖➖➖➖➖     Curso JavaScript: 3. Variables: var 🥊VS🥊 let - #jonmircha     ➖➖➖➖➖");
 
@@ -1653,7 +1654,7 @@
     console.log("Retorna el número de milisegundos desde el 01 / 01 / 1970:", Date.now());
 
     //Cumpleaños Luis y Jon:
-    let cumpleLuis = new Date(1993, 9, 26);
+    let cumpleLuis = new Date(1993, 08, 26, 13, 30, 00, 00);
     console.log("Cumpleaños Luis:", cumpleLuis);
     let cumpleJon = new Date(1984, 4, 23);
     console.log("Cumpleaños Jon MirCha:", cumpleJon);
@@ -1661,7 +1662,8 @@
     //Calcular edad Luis:
     //Aún se puede hacer mas precisa. Ya que no toma en cuenta la hora, minutos y segundos.
     function calcularEdad() {
-      const fechaNacLuis = new Date("1993-09-26");
+      //1993, Septiembre = 08, dia = 26
+      const fechaNacLuis = new Date(1993, 08, 26);
       let fechaNac = new Date(fechaNacLuis);
       let fechaNacDia = fechaNac.getDate();
       let fechaNacMes = fechaNac.getMonth();
@@ -1689,6 +1691,9 @@
       return fechaCalculada;
     }
     console.log("Edad de Luis:", calcularEdad());
+
+    //Prueba de Moment js:
+    console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
 
 
