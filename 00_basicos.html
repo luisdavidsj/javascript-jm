@@ -1658,6 +1658,37 @@
     let cumpleJon = new Date(1984, 4, 23);
     console.log("Cumpleaños Jon MirCha:", cumpleJon);
 
+    //Calcular edad Luis:
+    //Aún se puede hacer mas precisa. Ya que no toma en cuenta la hora, minutos y segundos.
+    function calcularEdad() {
+      const fechaNacLuis = new Date("1993-09-26");
+      let fechaNac = new Date(fechaNacLuis);
+      let fechaNacDia = fechaNac.getDate();
+      let fechaNacMes = fechaNac.getMonth();
+      let fechaNacAno = fechaNac.getFullYear();
+
+      let fechaHoy = new Date();
+      let fechaHoyDia = fechaHoy.getDate();
+      let fechaHoyMes = fechaHoy.getMonth();
+      let fechaHoyAno = fechaHoy.getFullYear();
+
+      let fechaCalculada = 0;
+
+      if (fechaHoyMes > fechaNacMes) {
+        fechaCalculada = fechaHoyAno - fechaNacAno;
+      } else if (fechaHoyMes == fechaNacMes) {
+        if (fechaHoyDia >= fechaNacDia) {
+          fechaCalculada = fechaHoyAno - fechaNacAno;
+        } else {
+          fechaCalculada = (fechaHoyAno - fechaNacAno) - 1;
+        }
+      } else {
+        fechaCalculada = (fechaHoyAno - fechaNacAno) - 1;
+      }
+
+      return fechaCalculada;
+    }
+    console.log("Edad de Luis:", calcularEdad());
 
 
 
