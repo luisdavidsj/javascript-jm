@@ -1493,29 +1493,29 @@
 
 
 
-    /* **********     Curso JavaScript: 26. Objeto console - #jonmircha     ********** */
-    /* console.log(console);
+    console.log("➖➖➖➖➖ Curso JavaScript: 26. Objeto console - #jonmircha ➖➖➖➖➖");
+    console.log(console);
     console.error("Esto es un error");
     console.warn("Esto es un aviso");
     console.info("Esto es un mensje informativo");
     console.log("Un registro de lo que ha pasado en nuestra aplicación");
 
-    let nombre = "Jon",
-      apellido = "MirCha",
-      edad = 35;
+    let nombreConsole = "Jon",
+      apellidoConsole = "MirCha",
+      edadConsole = 35;
 
-    console.log(nombre);
-    console.log(apellido);
-    console.log(edad);
-    console.log(nombre, apellido, edad);
-    console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años.`);
-    console.log(`Hola mi nombre es %s %s y tengo %d años.`, nombre, apellido, edad);
-    console.clear();
+    console.log(nombreConsole);
+    console.log(apellidoConsole);
+    console.log(edadConsole);
+    console.log(nombreConsole, apellidoConsole, edadConsole);
+    console.log(`Hola mi nombre es ${nombreConsole} ${apellidoConsole} y tengo ${edadConsole} años.`);
+    console.log(`Hola mi nombre es %s %s y tengo %d años.`, nombreConsole, apellidoConsole, edadConsole);
+    //console.clear();
     console.log(window);
     console.log(document);
     console.dir(window);
     console.dir(document);
-    console.clear();
+    //console.clear();
 
     console.group("Cursos de @jonmircha en YouTube");
     console.log("Curso de JavaScript");
@@ -1532,49 +1532,51 @@
     console.log("Curso de Flexbox");
     console.log("Curso de Diseño y Programación Web");
     console.groupEnd();
-    console.clear();
+    //console.clear();
     console.log(console);
     console.table(Object.entries(console).sort());
 
-    const numeros = [1, 2, 3, 4, 5],
-      vocales = ["a", "e", "i", "o", "u"];
+    const numerosConsole = [1, 2, 3, 4, 5],
+      vocalesConsole = ["a", "e", "i", "o", "u"];
 
-    console.table(numeros);
-    console.table(vocales);
+    console.table(numerosConsole);
+    console.table(vocalesConsole);
 
-    const perro = {
-      nombre: "Boni",
-      raza: "Boxer",
-      color: "cafe"
+    const perroConsole = {
+      nombreConsole: "Boni",
+      razaConsole: "Boxer",
+      colorConsole: "cafe"
     }
-    console.table(perro);
-    console.clear();
+    console.table(perroConsole);
+    //console.clear();
 
     console.time('Cuanto tiempo tarda mi código');
-    const arreglo = Array(1000000);
+    const arregloConsole = Array(1000000);
 
-    for (let i = 0; i < arreglo.length; i++) {
-      arreglo[i] = i;
+    for (let i = 0; i < arregloConsole.length; i++) {
+      arregloConsole[i] = i;
     }
 
     console.timeEnd('Cuanto tiempo tarda mi código');
     //console.log(arreglo);
 
-    console.clear();
+    //console.clear();
 
 
+    console.groupCollapsed("Código for");
     for (let i = 0; i <= 100; i++) {
       console.count("código for");
       console.log(i);
     }
+    console.groupEnd();
 
-    console.clear();
+    //console.clear();
 
-    let x = 3,
-      y = 2,
-      pruebaXY = "Se espera que X siempre sea menor que Y";
+    let xConsole = 1,
+      yConsole = 2,
+      pruebaXYConsole = "Se espera que X siempre sea menor que Y";
 
-    console.assert(x < y, { x, y, pruebaXY }); */
+    console.assert(xConsole < yConsole, { xConsole, yConsole, pruebaXYConsole });
 
 
 
