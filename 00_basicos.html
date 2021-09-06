@@ -1496,20 +1496,29 @@
     console.log("➖➖➖➖➖ Curso JavaScript: 26. Objeto console - #jonmircha ➖➖➖➖➖");
     console.log(console);
     console.error("Esto es un error");
+    console.error("Esto es otro error personalizado");
     console.warn("Esto es un aviso");
+    console.warn("Esto es otro aviso");
     console.info("Esto es un mensje informativo");
+    console.info("Esto es otro mensje informativo");
     console.log("Un registro de lo que ha pasado en nuestra aplicación");
+    console.log("Esto es otro console.log");
 
-    let nombreConsole = "Jon",
-      apellidoConsole = "MirCha",
-      edadConsole = 35;
+    let nombreConsole = "Luis",
+      apellidoConsole = "Saenz",
+      edadConsole = 28,
+      gustoConsole = "Programar";
 
     console.log(nombreConsole);
     console.log(apellidoConsole);
     console.log(edadConsole);
-    console.log(nombreConsole, apellidoConsole, edadConsole);
-    console.log(`Hola mi nombre es ${nombreConsole} ${apellidoConsole} y tengo ${edadConsole} años.`);
-    console.log(`Hola mi nombre es %s %s y tengo %d años.`, nombreConsole, apellidoConsole, edadConsole);
+    console.log(nombreConsole, apellidoConsole, edadConsole, gustoConsole);
+    //Uso de template String:
+    console.log(`Hola mi nombre es ${nombreConsole} ${apellidoConsole}, tengo ${edadConsole} años y me gusta ${gustoConsole}.`);
+    //Uso de template String con muletillas:
+    //%s = string
+    //%d = digito
+    console.log(`Hola mi nombre es %s %s, tengo %d años y me gusta %s.`, nombreConsole, apellidoConsole, edadConsole, gustoConsole);
     //console.clear();
     console.log(window);
     console.log(document);
@@ -1572,6 +1581,7 @@
 
     //console.clear();
 
+    //Pruebas unitarias básicas:
     let xConsole = 1,
       yConsole = 2,
       pruebaXYConsole = "Se espera que X siempre sea menor que Y";
@@ -1582,33 +1592,71 @@
 
 
 
-    /* **********     Curso JavaScript: 27. Objeto Date - #jonmircha     ********** */
-    /* console.log(Date());
+    console.log("➖➖➖➖➖     Curso JavaScript: 27. Objeto Date - #jonmircha     ➖➖➖➖➖");
 
+    //Constructor que crea un objeto Date con la fecha actual y lo muestra en la consola:
+    console.log(Date());
+
+    //Constructor que crea un objeto Date con la fecha actual, se guarda en la variable "fecha" y lo muestra en la consola:
     let fecha = new Date();
-    console.log(fecha);
-    //día del mes
-    console.log(fecha.getDate());
-    //día de la semana D L M Mi J V S -> 0 1 2 3 4 5 6
-    console.log(fecha.getDay());
-    //mes Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic -> 0 1 2 3 4 5 6 7 8 9 10 11
-    console.log(fecha.getMonth());
-    console.log(fecha.getFullYear());
-    console.log(fecha.getHours());
-    console.log(fecha.getMinutes());
-    console.log(fecha.getSeconds());
-    console.log(fecha.getMilliseconds());
-    console.log(fecha.toString());
-    console.log(fecha.toDateString());
-    console.log(fecha.toLocaleString());
-    console.log(fecha.toLocaleDateString());
-    console.log(fecha.toLocaleTimeString());
-    console.log(fecha.getTimezoneOffset());
-    console.log(fecha.getUTCDate());
-    console.log(fecha.getUTCHours());
-    console.log(Date.now());
+    console.log("Fecha completa:", fecha);
+
+    //Día del mes -> 1 - 31:
+    console.log("Día del mes:", fecha.getDate());
+
+    //Día de la semana D L M Mi J V S -> 0 1 2 3 4 5 6:
+    console.log("Día de la semana:", fecha.getDay());
+
+    //Mes Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic -> 0 1 2 3 4 5 6 7 8 9 10 11
+    console.log("Mes (0 al 11):", fecha.getMonth());
+
+    //Año:
+    console.log("Año:", fecha.getFullYear());
+
+    //Hora:
+    console.log("Hora:", fecha.getHours());
+
+    //Minuto:
+    console.log("Minuto:", fecha.getMinutes());
+
+    //Segundo:
+    console.log("Segundo:", fecha.getSeconds());
+
+    //Milisegundo:
+    console.log("Milisegundo:", fecha.getMilliseconds());
+
+    //Fecha completa en String:
+    console.log("Fecha completa en String:", fecha.toString());
+
+    //Fecha en un formato más legible:
+    console.log("Fecha en un formato más legible:", fecha.toDateString());
+
+    //Convierte un objeto Date en una String, utilizando las convenciones de configuración regional:
+    console.log("Convierte un objeto Date en una String, utilizando las convenciones de configuración regional:", fecha.toLocaleString());
+
+    //Retorna el objeto Date como una String, utilizando las convenciones de configuración regional:
+    console.log("Retorna el objeto Date como una String, utilizando las convenciones de configuración regional:", fecha.toLocaleDateString());
+
+    //Retorna la hora de un objeto Date como una String, utilizando las convenciones de configuración regional:
+    console.log("Retorna la hora de un objeto Date como una String, utilizando las convenciones de configuración regional:", fecha.toLocaleTimeString());
+
+    //Retorna la diferencia de zona horaria entre UTC y tu hora local:
+    console.log("Retorna la diferencia de zona horaria entre UTC y tu hora local:", fecha.getTimezoneOffset());
+
+    //Retorna el día del mes, según la hora universal:
+    console.log("Retorna el día del mes, según la hora universal:", fecha.getUTCDate());
+
+    //Retorna la hora, según la hora universal:
+    console.log("Retorna la hora, según la hora universal:", fecha.getUTCHours());
+
+    //Retorna el número de milisegundos desde el 01 / 01 / 1970:
+    console.log("Retorna el número de milisegundos desde el 01 / 01 / 1970:", Date.now());
+
+    //Cumpleaños Luis y Jon:
+    let cumpleLuis = new Date(1993, 9, 26);
+    console.log("Cumpleaños Luis:", cumpleLuis);
     let cumpleJon = new Date(1984, 4, 23);
-    console.log(cumpleJon); */
+    console.log("Cumpleaños Jon MirCha:", cumpleJon);
 
 
 
