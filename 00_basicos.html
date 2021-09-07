@@ -1768,12 +1768,74 @@
     console.log([] && "Valor de la derecha");
     console.log({} && "Valor de la derecha");
 
+    //Practicando operador de cortocircuito:
+    function saludar2(nombreCC) {
+      nombreCC = nombreCC || "Desconocido";
+      console.log(`Hola ${nombreCC}`);
+    }
+    saludar2("Luis");
+    saludar2();
+
+    console.log("*****************************");
+
+    //||
+    //Truthy con ||
+    console.log("*****Truthy con ||:*****");
+    console.log(true || "Derecha");
+    console.log({} || "Derecha");
+    console.log([] || "Derecha");
+    console.log(42 || "Derecha");
+    console.log("foo" || "Derecha");
+    console.log(new Date() || "Derecha");
+    console.log(-42 || "Derecha");
+    console.log(3.14 || "Derecha");
+    console.log(-3.14 || "Derecha");
+    console.log(Infinity || "Derecha");
+    console.log(-Infinity || "Derecha");
+    //Falsy con ||
+    console.log("*****Falsy con ||:*****");
+    console.log(false || "Derecha");
+    console.log(null || "Derecha");
+    console.log(undefined || "Derecha");
+    console.log(0 || "Derecha");
+    console.log(-0 || "Derecha");
+    console.log(0n || "Derecha");
+    console.log(NaN || "Derecha");
+    console.log("" || "Derecha");
+
+    //&&
+    //Truthy con &&
+    console.log("*****Truthy con &&:*****");
+    console.log(true && "Derecha");
+    console.log({} && "Derecha");
+    console.log([] && "Derecha");
+    console.log(42 && "Derecha");
+    console.log("foo" && "Derecha");
+    console.log(new Date() && "Derecha");
+    console.log(-42 && "Derecha");
+    console.log(3.14 && "Derecha");
+    console.log(-3.14 && "Derecha");
+    console.log(Infinity && "Derecha");
+    console.log(-Infinity && "Derecha");
+    //Falsy con &&
+    console.log("*****Falsy con &&:*****");
+    console.log(false && "Derecha");
+    console.log(null && "Derecha");
+    console.log(undefined && "Derecha");
+    console.log(0 && "Derecha");
+    console.log(-0 && "Derecha");
+    console.log(0n && "Derecha");
+    console.log(NaN && "Derecha");
+    console.log("" && "Derecha");
 
 
 
 
     console.log("➖➖➖➖➖     Curso JavaScript: 30. alert, confirm y prompt - #jonmircha     ➖➖➖➖➖");
     console.log(window);
+    console.dir(window.alert);
+    console.dir(window.confirm);
+    console.dir(window.prompt);
     //alert("Hola esto es una alerta");
     //confirm("Hola esto es una confirmación");
     //prompt("Hola esto es un aviso y le permite al usuario ingresar un valor");
@@ -1800,15 +1862,15 @@
         https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
     */
 
-    /*  let cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga cupiditate dolores saepe, praesentium sit eaque recusandae id sapiente similique, laudantium voluptatum perferendis ea iure ad odio doloremque earum voluptate.";
+    let cadena2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga cupiditate dolores saepe, praesentium sit eaque recusandae id sapiente similique, laudantium voluptatum perferendis ea iure ad odio doloremque earum voluptate.";
 
-     let expReg = new RegExp("lorem", "ig");
-     console.log(expReg.test(cadena));
-     console.log(expReg.exec(cadena));
+    let expReg = new RegExp("lorem", "ig");
+    console.log(expReg.test(cadena2));
+    console.log(expReg.exec(cadena2));
 
-     let expReg2 = /lorem{1,}/ig;
-     console.log(expReg2.test(cadena));
-     console.log(expReg2.exec(cadena)); */
+    let expReg2 = /lorem{1,}/ig;
+    console.log(expReg2.test(cadena2));
+    console.log(expReg2.exec(cadena2));
 
 
 
