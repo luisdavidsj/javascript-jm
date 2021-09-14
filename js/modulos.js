@@ -8,8 +8,8 @@ console.log(PI, usuario);
 console.log(calculos.sumar(3, 4));
 console.log(calculos.restar(3, 4));
 saludar();
-let saludo = new Saludar();
+let saludo = new Saludar(1, "A");
 saludo;
 //Mandando a llamar una clase que recibe 2 argumentos
-let saludo2 = new Saludar(1, "A");
+let saludo2 = new Saludar(2, "B");
 saludo2;
