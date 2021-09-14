@@ -65,11 +65,25 @@
 
     /* 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFunción("Hola Mundo", 4) devolverá "Hola" */
     console.log("➖➖➖➖Ejercicio 2➖➖➖➖");
+    console.log("➖Solución 1➖");
     function textoRecortado(texto, numero) {
       let textoRecortado = texto.slice(0, numero);
       console.log(textoRecortado);
     }
     textoRecortado("Hola Mundo", 8);
+
+    //Otra solucion:
+    console.log("➖Solución 2➖");
+    const cortarTexto = (texto = "", n) => {
+      (!texto)
+        ? console.warn("No has ingresado ningun texto")
+        : (n === undefined)
+          ? console.warn("No has ingresado un numero")
+          : console.log(texto.slice(0, n));
+    }
+    cortarTexto();
+    cortarTexto("Hola Mundo");
+    cortarTexto("Hola Mundo", 6);
 
 
 
