@@ -11,13 +11,38 @@
   <h1>Ejercicios de Programación en JavaScript</h1>
   <script>
     /* 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFunción("Hola Mundo") devolverá 10 */
+    console.log("➖➖➖Ejercicio 1➖➖➖");
     function contadorCaracteres(texto) {
       let caracteres = texto.length;
       console.log(caracteres);
     }
     contadorCaracteres("Hola Mundo");
 
+    //Otra solucion:
+    function contadorCaracteres2(texto = "") {
+      if (!texto) {
+        console.warn("No ingresaste ningún texto");
+      } else {
+        let caracteres = texto.length;
+        console.log(`La cadena ${texto} tiene ${caracteres} caracteres`);
+      }
+    }
+    contadorCaracteres2("abcde");
+
+    //Solucion con arrow function y operador ternario:
+    const contadorCaracteres3 = (texto = "") =>
+      (!texto)
+        ? console.warn("No ingresaste ningún texto")
+        : console.log(`La cadena ${texto} tiene ${texto.length} caracteres`);
+    contadorCaracteres3();
+    contadorCaracteres3("Hola Mundo");
+
+
+
+
+
     /* 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFunción("Hola Mundo", 4) devolverá "Hola" */
+    console.log("➖➖➖Ejercicio 2➖➖➖");
     function textoRecortado(texto, numero) {
       let textoRecortado = texto.slice(0, numero);
       console.log(textoRecortado);
@@ -25,8 +50,12 @@
     textoRecortado("Hola Mundo", 8);
 
 
+
+
+
     /* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
      miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'] */
+    console.log("➖➖➖Ejercicio 3➖➖➖");
     function textoSeparado(texto) {
       let arreglo = texto.split(" ");
       console.log(arreglo);
@@ -34,7 +63,11 @@
     textoSeparado("Hola que tal");
 
 
+
+
+
     /* 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo */
+    console.log("➖➖➖Ejercicio 4➖➖➖");
     function repetirTexto(texto, repeticiones) {
       for (let i = 0; i < repeticiones; i++) {
         console.log(texto);
@@ -43,7 +76,11 @@
     repetirTexto("Hola", 3);
 
 
+
+
+
     /* 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH" */
+    console.log("➖➖➖Ejercicio 5➖➖➖");
     function invertirTexto(texto) {
       let textoInvertido = "";
       for (let i = texto.length - 1; i >= 0; i--) {
@@ -59,6 +96,9 @@
       console.log(textoInvertido);
     }
     invertirTexto2("Hello World");
+
+
+
 
 
     /* 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2 */
