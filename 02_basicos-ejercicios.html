@@ -76,7 +76,7 @@
 
     //Otra solucion:
     console.log("➖Solución 2➖");
-    const cortarTexto = (texto = "", n) => {
+    const cortarTexto = (texto = "", n = undefined) => {
       (!texto)
         ? console.warn("No has ingresado ningun texto")
         : (n === undefined)
@@ -94,12 +94,26 @@
     /* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
      miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'] */
     console.log("➖➖➖➖Ejercicio 3➖➖➖➖");
+    console.log("➖Solución 1➖");
     function textoSeparado(texto) {
       let arreglo = texto.split(" ");
       console.log(arreglo);
     }
     textoSeparado("Hola que tal");
 
+    //Otra solución:
+    console.log("➖Solución 2➖");
+    const separarTexto = (texto = "", c = undefined) =>
+      (!texto)
+        ? console.warn("No ingresaste ningun texto")
+        : (c === undefined)
+          ? console.warn("No ingresaste ningun separador")
+          : console.log(texto.split(c));
+    separarTexto("Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta porro corrupti, sed beatae et hic amet sequi adipisci maxime omnis iure ea placeat cumque fuga laboriosam veniam obcaecati doloremque consectetur!", " ");
+    separarTexto("Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic", ",");
+    separarTexto();
+    separarTexto("Hola mundo");
+    separarTexto("", " ");
 
 
 
