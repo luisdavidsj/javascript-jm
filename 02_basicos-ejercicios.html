@@ -34,7 +34,7 @@
         console.warn("No ingresaste ningún texto");
       } else {
         let caracteres = texto.length;
-        console.log(`La cadena ${texto} tiene ${caracteres} caracteres`);
+        console.log(`La cadena "${texto}" tiene ${caracteres} caracteres`);
       }
     }
     contadorCaracteres2("Como estais");
@@ -70,7 +70,7 @@
     console.log("➖Solución 1➖");
     function textoRecortado(texto, numero) {
       let textoRecortado = texto.slice(0, numero);
-      console.log(textoRecortado);
+      console.log(`El texto "${texto}" se recortó a: ${textoRecortado}`);
     }
     textoRecortado("Hola Mundo", 8);
 
@@ -118,6 +118,7 @@
 
 
 
+
     /* 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo */
     console.log("➖➖➖➖Ejercicio 4➖➖➖➖");
     function repetirTexto(texto, repeticiones) {
@@ -126,6 +127,20 @@
       }
     }
     repetirTexto("Hola", 3);
+
+    //Otra solucion:
+    const repetirTexto2 = (texto = "", r = undefined) => {
+      if (!texto) return console.warn("No ingresaste un texto");
+      if (r === undefined) return console.warn("No ingresaste un numero para repetir");
+      if (r === 0) return console.warn("No se puede repetir 0 veces");
+      if (Math.sign(r) === -1) return console.error("El numero de veces no puede ser negativo");
+      for (let i = 1; i <= r; i++) console.log(`${texto}, ${i}`);
+    }
+    repetirTexto2("Hola Mundo", 3);
+    repetirTexto2("Hola Mundo", 0);
+    repetirTexto2("Hola Mundo", -20);
+    repetirTexto2("", 20);
+    repetirTexto2("Hola Mundo");
 
 
 
