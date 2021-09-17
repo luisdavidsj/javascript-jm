@@ -171,7 +171,27 @@
 
 
     /* 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2 */
-
+    console.log("➖➖➖➖Ejercicio 6➖➖➖➖");
+    console.log("➖Solución 1➖");
+    const contadorPalabras = (texto = "", palabra = "") => {
+      if (!texto) return console.warn("No ingresaste una cadena de texto");
+      if (!palabra) return console.warn("No ingresaste una palabra a evaluar");
+      let i = 0;
+      let contador = 0;
+      while (i !== -1) {
+        i = texto.indexOf(palabra, i);
+        if (i !== -1) {
+          i++;
+          contador++;
+        }
+      }
+      return console.info(`La palabra "${palabra}" se repite ${contador} veces`);
+    }
+    contadorPalabras();
+    contadorPalabras("", "mundo");
+    contadorPalabras("Hola mundo adios mundo");
+    contadorPalabras("Hola mundo adios mundo", "mundo");
+    contadorPalabras("Hola mundo adios mundo mundo", "mundo");
 
 
     /* 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true */
