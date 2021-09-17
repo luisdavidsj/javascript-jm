@@ -198,6 +198,22 @@
     console.log("➖➖➖➖Ejercicio 7➖➖➖➖");
     console.log("➖Solución 1➖");
     const validarPalindromo = (palabra = "") => {
+      if (!palabra) return console.warn("No has ingresado el texto a evaluar");
+
+      palabra = palabra.toLowerCase();
+      let palabraInvertida = palabra.split("").reverse().join("");
+
+      return (palabra === palabraInvertida)
+        ? console.info(`Si es palindromo, Palabra original: "${palabra}", palabra al reves: "${palabraInvertida}"`)
+        : console.info(`No es palindromo, Palabra original: "${palabra}", palabra al reves: "${palabraInvertida}"`);
+    }
+    validarPalindromo();
+    validarPalindromo("Hola mundo");
+    validarPalindromo("Salas");
+    validarPalindromo("SaLaS");
+
+    console.log("➖Solución 2➖");
+    const validarPalindromo2 = (palabra = "") => {
       if (!palabra) {
         console.warn("No has ingresado el texto a evaluar");
       } else {
@@ -209,16 +225,22 @@
         }
       }
     }
-    validarPalindromo("");
-    validarPalindromo("Salas");
+    //validarPalindromo2("");
+    //validarPalindromo2("Salas");
 
 
     /* 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5 */
+    let eliminarPatron = (texto, patron) => {
 
+    }
 
 
     /* 9) Programa una función que obtenga un numero aleatorio entre 501 y 600 */
-
+    const numeroAleatorio = () => {
+      let numero = Math.round(Math.random() * (600 - 501) + 501);
+      console.log(numero);
+    }
+    //numeroAleatorio();
 
 
     /* 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true  */
