@@ -249,12 +249,21 @@
 
 
     /* 9) Programa una función que obtenga un numero aleatorio entre 501 y 600 */
+    console.log("➖➖➖➖Ejercicio 9➖➖➖➖");
+    console.log("➖Solución 1➖");
     const numeroAleatorio = () => {
       let numero = Math.round(Math.random() * (600 - 501) + 501);
       console.log(numero);
     }
-    //numeroAleatorio();
+    numeroAleatorio();
 
+    console.log("➖Solución 2➖");
+    const numeroAleatorio2 = () => console.info(Math.round(Math.random() * (600 - 501) + 501));
+    numeroAleatorio2();
+
+    console.log("➖Solución 3➖");
+    const numeroAleatorio3 = () => console.info(Math.round((Math.random() * 100) + 500));
+    numeroAleatorio3();
 
     /* 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true  */
 
