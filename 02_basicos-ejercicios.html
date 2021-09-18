@@ -225,14 +225,27 @@
         }
       }
     }
-    //validarPalindromo2("");
-    //validarPalindromo2("Salas");
+    validarPalindromo2("");
+    validarPalindromo2("Salas");
 
 
     /* 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5 */
-    let eliminarPatron = (texto, patron) => {
-
+    console.log("➖➖➖➖Ejercicio 8➖➖➖➖");
+    console.log("➖Solución 1➖");
+    let eliminarPatron = (texto = "", patron = "") => {
+      (!texto)
+        ? console.warn("No ingresaste un texto")
+        : (!patron)
+          ? console.warn("No ingresaste un partron de caracteres")
+          : console.info(texto.replace(new RegExp(patron, "ig"), ""))
     }
+
+    //El segundo parametro es una expresion regular, por ejemplo [a-z], [0-9], etc.
+    eliminarPatron();
+    eliminarPatron("xyz1,xyz2,xyz3,xyz4,xyz5");
+    eliminarPatron("xyz1,xyz2,xyz3,xyz4,xyz5", "xyz");
+    eliminarPatron("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quisquam. Molestias, assumenda error? Velit ea delectus vero, possimus repellat atque. Dicta deleniti temporibus provident blanditiis iusto, accusantium neque velit nemo?", "o");
+    eliminarPatron("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quisquam. Molestias, assumenda error? Velit ea delectus vero, possimus repellat atque. Dicta deleniti temporibus provident blanditiis iusto, accusantium neque velit nemo?", "[a-z]");
 
 
     /* 9) Programa una función que obtenga un numero aleatorio entre 501 y 600 */
