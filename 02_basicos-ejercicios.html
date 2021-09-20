@@ -314,11 +314,57 @@
 
 
     /* 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true */
+    console.log("➖➖➖➖Ejercicio 12➖➖➖➖");
+    console.log("➖Solución 1➖");
+    const numeroPrimo = (numero = undefined) => {
+      if (numero === undefined) return console.warn("No ingresaste un numero");
+      if (typeof numero !== "number") return console.error(`El valor "${numero}" ingresado No es un numero`);
+      if (numero === 0) return console.error("El numero no puede ser 0");
+      if (numero === 1) return console.error("El numero no puede ser 1");
+      if (Math.sign(numero) === -1) console.error("El numero no puede ser negativo");
+
+      let divisible = false;
+      for (let i = 2; i < numero; i++) {
+        if ((numero % i) === 0) {
+          divisible = true;
+          break;
+        }
+      }
+      return (divisible)
+        ? console.log(`El numero ${numero} No es primo`)
+        : console.log(`El numero ${numero} Si es primo`);
+    }
+    numeroPrimo();
+    numeroPrimo("320");
+    numeroPrimo(true);
+    numeroPrimo(0);
+    numeroPrimo(1);
+    numeroPrimo(-13);
+    numeroPrimo(13);
+    numeroPrimo(200);
 
 
 
     /* 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar */
-
+    /*console.log("➖➖➖➖Ejercicio 13➖➖➖➖");
+    console.log("➖Solución 1➖");
+    const numeroPar = (numero = undefined) => {
+      if (numero === undefined) console.warn("No has ingresado un numero");
+      if (typeof numero !== "number") console.warn(`El valor ingresado ${numero} No es un numero`);
+      let numeroPar = false;
+      if ((numero % 2) === 0) {
+        console.log(`El numero ${numero} Si es un numero par`);
+      } else {
+        console.log(`El numero ${numero} No es un numero par`);
+      }
+    }
+    numeroPar();
+    numeroPar("2");
+    numeroPar(0);
+    numeroPar(-2);
+    numeroPar(2);
+    numeroPar(3);
+    numeroPar(200);*/
 
 
     /* 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F */
