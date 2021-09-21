@@ -346,25 +346,37 @@
 
 
     /* 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar */
-    /*console.log("➖➖➖➖Ejercicio 13➖➖➖➖");
+    console.log("➖➖➖➖Ejercicio 13➖➖➖➖");
     console.log("➖Solución 1➖");
     const numeroPar = (numero = undefined) => {
-      if (numero === undefined) console.warn("No has ingresado un numero");
-      if (typeof numero !== "number") console.warn(`El valor ingresado ${numero} No es un numero`);
-      let numeroPar = false;
-      if ((numero % 2) === 0) {
-        console.log(`El numero ${numero} Si es un numero par`);
-      } else {
-        console.log(`El numero ${numero} No es un numero par`);
-      }
+      if (numero === undefined) return console.warn("No ingresaste un numero");
+      if (typeof numero !== "number") return console.error(`El valor ingresado ${numero} No es un numero`);
+      return ((numero % 2) === 0)
+        ? console.info(`El numero ${numero} es Par`)
+        : console.info(`El numero ${numero} es Impar`);
     }
     numeroPar();
-    numeroPar("2");
-    numeroPar(0);
-    numeroPar(-2);
+    numeroPar("23");
     numeroPar(2);
-    numeroPar(3);
-    numeroPar(200);*/
+    numeroPar(-398);
+    numeroPar(19);
+
+    console.log("➖Solución 2➖");
+    const numeroPar2 = (numero = undefined) => {
+      if (numero === undefined) return console.warn("No ingresaste un numero");
+      if (typeof numero !== "number") return console.error(`El valor ingresado ${numero} No es un numero`);
+      if ((numero % 2) === 0) {
+        console.log(`El numero ${numero} es Par`);
+      } else {
+        console.log(`El numero ${numero} es Impar`);
+      }
+    }
+    numeroPar2();
+    numeroPar2("23");
+    numeroPar2(2);
+    numeroPar2(-398);
+    numeroPar2(19);
+
 
 
     /* 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F */
