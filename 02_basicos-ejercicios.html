@@ -407,11 +407,80 @@
     convertirGrados(100, "F");
 
     /* 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10 */
+    console.log("➖➖➖➖Ejercicio 15➖➖➖➖");
+    console.log("➖Solución 1➖");
+    const convertirbinarioDecimal = (numero = undefined, base = undefined) => {
+      if (numero === undefined) return console.warn("No ingresaste el numero a convertir");
+      if (typeof numero !== "number") return console.error(`El valor "${numero}" ingresado No es un numero`);
+      if (base === undefined) return console.warn("No ingresaste la base a convertir");
+      if (typeof base !== "number") return console.error(`El valor "${base}" ingresado No es un numero`);
+
+      if (base === 2) {
+        return console.info(`${numero} base ${base} = ${parseInt(numero, base)} base 10`);
+      } else if (base === 10) {
+        return console.info(`${numero} base ${base} = ${(numero.toString(base))} base 2`);
+      } else {
+        return console.error("El tipo de base a convertir No es valido");
+      }
+    }
+    convertirbinarioDecimal();
+    convertirbinarioDecimal("2");
+    convertirbinarioDecimal(100);
+    convertirbinarioDecimal(100, "2");
+    convertirbinarioDecimal(100, 2);
+    convertirbinarioDecimal(1110010, 2);
+    convertirbinarioDecimal(4, 10);
+    convertirbinarioDecimal(114, 10);
+    convertirbinarioDecimal(114, 3);
+
+
 
 
 
     /* 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800 */
+    console.log("➖➖➖➖Ejercicio 16➖➖➖➖");
+    console.log("➖Solución 1➖");
+    const aplicarDescuento = (monto = undefined, descuento = 0) => {
+      if (monto === undefined) return console.warn("No ingresaste el monto");
+      if (typeof monto !== "number") return console.error(`El valor "${monto}" ingresado No es un numero`);
+      if (monto === 0) return console.error("El monto no puede ser 0");
+      if (Math.sign(monto) === -1) return console.error("El monto no puede ser negativo");
+      if (typeof descuento !== "number") return console.error(`El valor "${descuento}" ingresado No es un numero`);
+      if (Math.sign(descuento) === -1) return console.error("El descuento no puede ser negativo");
 
+      //Para obtener el resultado directamente del descuento de usa una Regla de  3: Si monto es el 100%, descuento cuando será? = descuento * monto / 100
+      return console.info(`$${monto} - ${descuento}% = $${monto - ((monto * descuento) / 100)}`);
+    }
+    aplicarDescuento();
+    aplicarDescuento("200");
+    aplicarDescuento(0);
+    aplicarDescuento(-1000);
+    aplicarDescuento(1000, "20");
+    aplicarDescuento(1000, -20);
+    aplicarDescuento(1000);
+    aplicarDescuento(1000, 25);
+
+    console.log("➖Solución 2➖");
+    const aplicarDescuento2 = (monto = undefined, descuento = 0) => {
+      if (monto === undefined) return console.warn("No ingresaste el monto");
+      if (typeof monto !== "number") return console.error(`El valor "${monto}" ingresado No es un numero`);
+      if (monto === 0) return console.error("El monto no puede ser 0");
+      if (Math.sign(monto) === -1) return console.error("El monto no puede ser negativo");
+      if (typeof descuento !== "number") return console.error(`El valor "${descuento}" ingresado No es un numero`);
+      if (Math.sign(descuento) === -1) return console.error("El descuento no puede ser negativo");
+
+      //En este caso el resultado de la regla de 3 se guarda en una variable y despues se imprime la variable en el return, da el mismo resultado
+      let resultadoDescuento = (monto - ((monto * descuento) / 100));
+      return console.info(`$${monto} - ${descuento}% = $${resultadoDescuento}`);
+    }
+    aplicarDescuento2();
+    aplicarDescuento2("200");
+    aplicarDescuento2(0);
+    aplicarDescuento2(-1000);
+    aplicarDescuento2(1000, "20");
+    aplicarDescuento2(1000, -20);
+    aplicarDescuento2(1000);
+    aplicarDescuento2(1000, 25);
 
 
     /* 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020) */
