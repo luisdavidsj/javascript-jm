@@ -194,6 +194,9 @@
     contadorPalabras("Hola mundo adios mundo mundo", "mundo");
 
 
+
+
+
     /* 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true */
     console.log("➖➖➖➖Ejercicio 7➖➖➖➖");
     console.log("➖Solución 1➖");
@@ -229,6 +232,9 @@
     validarPalindromo2("Salas");
 
 
+
+
+
     /* 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5 */
     console.log("➖➖➖➖Ejercicio 8➖➖➖➖");
     console.log("➖Solución 1➖");
@@ -246,6 +252,9 @@
     eliminarPatron("xyz1,xyz2,xyz3,xyz4,xyz5", "xyz");
     eliminarPatron("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quisquam. Molestias, assumenda error? Velit ea delectus vero, possimus repellat atque. Dicta deleniti temporibus provident blanditiis iusto, accusantium neque velit nemo?", "o");
     eliminarPatron("Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quisquam. Molestias, assumenda error? Velit ea delectus vero, possimus repellat atque. Dicta deleniti temporibus provident blanditiis iusto, accusantium neque velit nemo?", "[a-z]");
+
+
+
 
 
     /* 9) Programa una función que obtenga un numero aleatorio entre 501 y 600 */
@@ -287,6 +296,9 @@
     esCapicua(212.212);
 
 
+
+
+
     /* 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120 */
     console.log("➖➖➖➖Ejercicio 11➖➖➖➖");
     console.log("➖Solución 1➖");
@@ -310,6 +322,8 @@
     //factorial(8);
     //factorial(16);
     //factorial(32);
+
+
 
 
 
@@ -342,6 +356,8 @@
     numeroPrimo(-13);
     numeroPrimo(13);
     numeroPrimo(200);
+
+
 
 
 
@@ -379,6 +395,8 @@
 
 
 
+
+
     /* 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F */
     console.log("➖➖➖➖Ejercicio 14➖➖➖➖");
     console.log("➖Solución 1➖");
@@ -405,6 +423,10 @@
     convertirGrados(100, "C");
     convertirGrados(32, "F");
     convertirGrados(100, "F");
+
+
+
+
 
     /* 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10 */
     console.log("➖➖➖➖Ejercicio 15➖➖➖➖");
@@ -483,6 +505,9 @@
     aplicarDescuento2(1000, 25);
 
 
+
+
+
     /* 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020) */
     console.log("➖➖➖➖Ejercicio 17➖➖➖➖");
     console.log("➖Solución 1➖");
@@ -511,7 +536,40 @@
     calcularAnios(new Date(1993, 8, 26));
 
 
+
+
+
     /* 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
+    console.log("➖➖➖➖Ejercicio 18➖➖➖➖");
+    console.log("➖Solución 1➖");
+    const contarLetras = (cadena = "") => {
+      if (!cadena) return console.warn("No ingresaste una cadena de texto");
+      if (typeof cadena !== "string") return console.error(`El valor ${cadena} ingresado, No es una cadena de texto`);
+
+      let vocales = 0,
+        consonantes = 0;
+
+      cadena = cadena.toLocaleLowerCase();
+
+      for (let letra of cadena) {
+        if (/[aeiouáéíóúü]/.test(letra)) vocales++;
+
+        if (/[bcdfghjklmnñpqrstvwxyz]/.test(letra)) consonantes++;
+      }
+      return console.info({
+        cadena,
+        vocales,
+        consonantes
+      });
+    }
+    contarLetras();
+    contarLetras(3);
+    contarLetras("Hola Mundo");
+    contarLetras("Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cum, vitae laudantium necessitatibus cupiditate recusandae pariatur adipisci delectus officia ipsa voluptates dolorum dolores libero debitis odit fuga quidem quisquam nesciunt?");
+
+
+
+
 
 
 
