@@ -674,6 +674,25 @@
 
 
     /* 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60] */
+    console.log("➖➖➖➖Ejercicio 22➖➖➖➖");
+    console.log("➖Solución 1➖");
+    const arrayMinMax = (arr = undefined) => {
+      if (arr === undefined) return console.warn("No ingresaste un arreglo de numeros");
+      if (!(arr instanceof Array)) return console.error("El valor que ingresaste un es un arreglo");
+      if (arr.length === 0) return console.error("El arreglo esta vacio");
+      for (let num of arr) {
+        if (typeof num !== "number")
+          return console.error(`El valor "${num}" ingresado, No es un numero`);
+      }
+
+      return console.info(`Arreglo original: ${arr}, Valor mayor: ${Math.max(...arr)}, Valor menor: ${Math.min(...arr)}`);
+    }
+    arrayMinMax();
+    arrayMinMax(false);
+    arrayMinMax([]);
+    arrayMinMax(2, 3, true);
+    arrayMinMax([1, 4, 5, 99, -60]);
+
 
 
 
